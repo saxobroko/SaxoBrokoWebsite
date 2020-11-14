@@ -1,6 +1,6 @@
 const SAXOCACHE = "saxobroko-precache";
 const precacheFiles = [
-  "/games/index", "/tools/index"
+  "/games", "/tools"
 ];
 
 self.addEventListener("install", function (event) {
