@@ -435,7 +435,10 @@ a{
 .sp-avatar
 { max-width: 100%; background-size: 100%; background-image: url('https://cdn.statically.io/gh/saxobroko/SaxoMaintenance/main/images/sprite.webp'); }
 .sp-avatar { background-position: 0 100%; background-size: 402.612827%; }
-</style><style>.main{margin-left:120px;padding-left:120px;}.sticky{position: -webkit-sticky; position: sticky; top: 0; color: white; padding: 10px;font-size: 20px;}</style>
+.main{margin-left:120px;padding-left:120px;}.sticky{position: -webkit-sticky; position: sticky; top: 0; color: white; padding: 10px;font-size: 20px;}
+.ackno {visibility:hidden;opacity:0;display:inline-block;position:fixed;left:-80px;bottom:-12px;background-color:#252424;width:240px;padding:15px;border-radius: 0 5px 5px 0;z-index:5;transition: visibility 1s, opacity 0.3s, left 0.3s  ease-out;}
+.acknowledgement:hover .ackno{opacity:1;visibility:visible;left:120px;}
+</style>
 <script type='text/javascript'>
 //<![CDATA[
 // Lazy Load AdSense By Tggyan.in
@@ -462,12 +465,12 @@ window.addEventListener("scroll", function() {
 </script>
 </div>	</head>
 <style>.w3-bar-item{height:13.25%;padding:100px;}#currentpage{background:#000}a{font-size:12px}.mobile-container{max-width: 480px; margin: auto; background-color: #555; height: 500px; color: white; border-radius: 10px;}.topnav{overflow: hidden; background-color: #333; position: sticky;}.topnav a{float: left; color: white; padding: 14px 16px; text-decoration: none; font-size: 17px;}.topnav a:hover{background-color: #ddd; color: black;}.sticky1{z-index: 1;}.sticky1{position: sticky; top: 0px;}.download{position:fixed;right:2%;bottom:5%;}.btn33 {transition: transform 0.3s;}.btn33:hover {transform: scale(1.2);}</style>
-<a href="#" id="add-button" class="w3-button w3-hover-black w3-hide-small" style="background-color: gray;position: fixed;z-index: 11;right: 87px;bottom: 0;" aria-label="Install"><b>Install</b></a>
-<a class="w3-button w3-hover-black w3-hide-small" style="background-color: gray;position: fixed;z-index: 11;right: 156px;bottom: 0;" href="/sponsors#"><b>Sponsors</b></a>
-<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 11;right: 342px;bottom: 0;" href="https://saxobroko.kampsite.co/"><b>Feedback</b></a>
-<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 11;right: 245px;bottom: 0;" href="https://covid.saxobroko.com"><b>CovidStats</b></a>
-<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 11;right: 431px;bottom: 0;" href="https://blog.saxobroko.com"><b>Blog</b></a>
-<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 11;right: 495.61px;bottom: 0;" href="https://saxobroko.myportfolio.com/"><b>Portfolio</b></a>
+<a href="#" id="add-button" class="w3-button w3-hover-black w3-hide-small" style="background-color: gray;position: fixed;z-index: 1;right: 87px;bottom: 0;" aria-label="Install"><b>Install</b></a>
+<a class="w3-button w3-hover-black w3-hide-small" style="background-color: gray;position: fixed;z-index: 1;right: 156px;bottom: 0;" href="/sponsors#"><b>Sponsors</b></a>
+<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 1;right: 342px;bottom: 0;" href="https://saxobroko.kampsite.co/"><b>Feedback</b></a>
+<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 1;right: 245px;bottom: 0;" href="https://covid.saxobroko.com"><b>CovidStats</b></a>
+<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 1;right: 431px;bottom: 0;" href="https://blog.saxobroko.com"><b>Blog</b></a>
+<a class="w3-button w3-hover-black w3-hide-small" target="_blank" rel="noopener" style="background-color: gray;position: fixed;z-index: 1;right: 495.61px;bottom: 0;" href="https://saxobroko.myportfolio.com/"><b>Portfolio</b></a>
 <nav style="z-index: 10;" class="w3-hide-small w3-text-white w3-sidebar nobar side w3-bar-block w3-small w3-center">
 <img class="sp-avatar" alt="Saxo_Broko" width="1000" height="auto" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA">
 <a id="currentpage"target="_self" class="w3-bar-item btn33 w3-button w3-hover-black" href="/#" aria-label="Home">
@@ -495,6 +498,13 @@ window.addEventListener("scroll", function() {
 <svg style="width:40px; filter: invert(100%);" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><path d="M26.109 8.844c0 0.391-0.156 0.781-0.438 1.062l-13.438 13.438c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-7.781-7.781c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l2.125-2.125c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l4.594 4.609 10.25-10.266c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l2.125 2.125c0.281 0.281 0.438 0.672 0.438 1.062z"></path></svg>
 <p>STATUS</p>
 </a>
+<div class="acknowledgement">
+<button target="_self" class="w3-bar-item w3-button w3-hover-black" rel="noopener" aria-label="Acknowledgement">
+<svg style="width:40px; filter: invert(100%);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path>
+</svg>
+</button>
+<p class="ackno">Saxo_Broko acknowledges the Wurundjeri people of the Kulin Nation and other Traditional Custodians of country throughout Australia and their connections to the land, sea and community. We pay our respect to their elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.</p>
+</div>
 </nav>
 <div class="sticky1 w3-hide-large w3-hide-medium topnav">
     <a id="currentpage" href="/#">Home</a>
@@ -530,7 +540,7 @@ window.addEventListener("scroll", function() {
 </a>
 </header>
 <div class='br onesignal-customlink-container'></div>
-<footer style="z-index: 10;" style="content-visibility: auto;" class="glow 100 w3-display-bottommiddle w3-content w3-center w3-padding-64 w3-xlarge">
+<footer style="z-index: 1;" style="content-visibility: auto;" class="glow 100 w3-display-bottommiddle w3-content w3-center w3-padding-64 w3-xlarge">
 <div class="w3-hide-small w3-hide-medium" id="bottom1"><a class="w3-large">&copy; Saxo_Broko 2015 - 2020</a></div>
 <div class="w3-hide-large" id="bottom2"><a class="w3-medium">&copy; Saxo_Broko 2015 - 2020</a></div>
 </footer></div> </div>
