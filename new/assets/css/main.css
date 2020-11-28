@@ -1246,7 +1246,7 @@
 	}
 
 		section .columns.double .column, article .columns.double .column {
-			width: 48%;
+			width: 31.33333333333%;
 		}
 
 			@media screen and (max-width: 980px) {
@@ -1612,3 +1612,6 @@
 			}
 
 		}
+		
+/* Custom */
+.w3-center{text-align:center}
