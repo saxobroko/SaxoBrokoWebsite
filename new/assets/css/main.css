@@ -8,6 +8,13 @@
 */
 
 /* Reset */
+.darkmode-toggle {z-index: 11; width: 4rem!important; height: 4rem!important;}
+.darkmode--activated h2, .darkmode--activated h1{
+	color: #fff;
+}
+.darkmode--activated .inner h1 {
+	color: #000;
+}
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
@@ -1598,7 +1605,7 @@
 	}
 
 		#footer .copyright {
-			color: #bfbfbf;
+			color: #717171;
 			font-size: 0.9em;
 			margin: 0 0 2em 0;
 			padding: 0 1em;
