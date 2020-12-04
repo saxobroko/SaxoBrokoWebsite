@@ -1622,3 +1622,6 @@
 		
 /* Custom */
 .w3-center{text-align:center}
+li a span svg {
+	width: 22px;
+}
