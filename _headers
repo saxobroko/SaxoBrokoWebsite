@@ -1,0 +1,3 @@
+X-Frame-Options "SAMEORIGIN"
+Content-Security-Policy: default-src 'self'; img-src *; media-src *.google.com *.youtube.com; script-src *.cloudflare.com *.saxobroko.com
+X-XSS-Protection: 1
