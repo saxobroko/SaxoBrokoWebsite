@@ -1,4 +1,4 @@
 /*
   X-Frame-Options "SAMEORIGIN"
-  Content-Security-Policy: default-src 'self' *.google.com *.youtube.com *.cloudflare.com *.saxobroko.com *.cloudfront.net *.gstatic.com
+  Content-Security-Policy: default-src 'self' *.google.com *.youtube.com *.cloudflare.com *.saxobroko.com *.cloudfront.net *.gstatic.com *.statically.io; script-src unsafe-eval;
   X-XSS-Protection: 1
