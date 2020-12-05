@@ -114,9 +114,17 @@
                             <label for="message">Message</label>
                             <textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
                         </div>
-                        <div data-netlify-recaptcha="true"></div>
+
                         <ul class="actions">
-                            <li><input value="Send Message" class="button" type="submit"></li>
+                            <li>
+                                <button class="g-recaptcha button"
+                                        data-sitekey="6LfasfkZAAAAAFV9GaBvK0ei33ukizzy7z1FVQJt"
+                                        data-callback='onSubmit'
+                                        data-action='submit'
+                                        type="submit">
+                                    Send Message
+                                </button>
+                            </li>
                         </ul>
                     </form>
                 </div>
@@ -140,6 +148,7 @@
     <script defer src="assets/js/skel.min.js"></script>
     <script defer src="assets/js/util.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <script data-ad-client="ca-pub-5272697239443885" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </body>
 </html>

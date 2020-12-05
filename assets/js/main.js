@@ -124,6 +124,11 @@ const options = {
 const darkmode = new Darkmode(options);
 darkmode.showWidget();
 
+// Recaptcha
+   function onSubmit(token) {
+     document.getElementById("demo-form").submit();
+   }
+
 // Lazyload images
 !function(window){
   var $q = function(q, res){
