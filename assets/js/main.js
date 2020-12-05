@@ -127,7 +127,20 @@ darkmode.showWidget();
 // Recaptcha
    function onSubmit(token) {
 	return new Promise(function(resolve, reject) {
-     document.getElementById("contact").submit();
+         if (grecaptcha === undefined) {
+        alert('Recaptcha non definito'); 
+        //return;
+        reject();
+		}
+
+		var response = grecaptcha.getResponse();
+		console.log(response);
+
+		if (!response) {
+			alert('Coud not get recaptcha response'); 
+			//return;
+		 reject();
+	 }
 	 resolve();
 	});
    };
