@@ -126,8 +126,11 @@ darkmode.showWidget();
 
 // Recaptcha
    function onSubmit(token) {
+	return new Promise(function(resolve, reject) {
      document.getElementById("contact").submit();
-   }
+	 resolve();
+	});
+   };
 
 // Lazyload images
 !function(window){
