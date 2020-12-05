@@ -120,9 +120,10 @@
 				<!-- Form -->
 				<div class="column">
 					<h3>Get in Touch</h3>
-					<form method="post" name="contact" data-netlify=”true” data-netlify-recaptcha="true">
+					<form method="post" name="contact" data-netlify=”true” data-netlify-recaptcha="true" netlify-honeypot="secretshh">
 						<div class="field half first">
 							<label for="name">Name</label>
+							<label class="secretshh">Don’t fill this out if you're human: <input name="secretshh" /></label>
 							<input name="name" id="name" type="text" placeholder="Name">
 						</div>
 						<div class="field half">
