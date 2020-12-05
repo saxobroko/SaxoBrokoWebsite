@@ -101,9 +101,10 @@
                 <!-- Form -->
                 <div class="column">
                     <h3>Get in Touch</h3>
-                    <form method="post" name="contact" data-netlify=”true” data-netlify-recaptcha="true" id="contact">
+                    <form method="post" name="contact" data-netlify=”true” data-netlify-recaptcha="true" netlify-honeypot="secretshh" id="contact">
                         <div class="field half first">
                             <label for="name">Name</label>
+                            <label class="secretshh">Don’t fill this out if you're human: <input name="secretshh" /></label>
                             <input name="name" id="name" type="text" placeholder="Name">
                         </div>
                         <div class="field half">
@@ -120,8 +121,7 @@
                                 <button class="g-recaptcha button"
                                         data-sitekey="6LfotvkZAAAAACrE3u6Q6ojQN6kFH7-o7efa-UPa"
                                         data-callback='onSubmit'
-                                        data-action='submit'
-                                        data-size="invisible">
+                                        data-action='submit'>
                                     Send Message
                                 </button>
                             </li>
@@ -148,7 +148,7 @@
     <script defer src="assets/js/skel.min.js"></script>
     <script defer src="assets/js/util.js"></script>
     <script defer src="assets/js/main.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script defer src="https://www.google.com/recaptcha/api.js"></script>
     <script data-ad-client="ca-pub-5272697239443885" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </body>
 </html>
