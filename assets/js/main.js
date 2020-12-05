@@ -126,7 +126,7 @@ darkmode.showWidget();
 
 // Recaptcha
    function onSubmit(token) {
-     document.getElementById("demo-form").submit();
+     document.getElementById("contact").submit();
    }
 
 // Lazyload images
