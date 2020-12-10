@@ -100,8 +100,9 @@
 
 //Image Popup
 $(document).ready(function() {
-  $('.imagepop').magnificPopup({type:'image'});
+  // $('.imagepop').magnificPopup({type:'image'});
   $('.popyoutube').magnificPopup({type:'iframe'});
+  $('.content').magnificPopup({delegate: 'a', type: 'image'});
 });
 
 // Dark Mode
