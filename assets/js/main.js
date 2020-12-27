@@ -136,5 +136,3 @@ darkmode.showWidget();
 
 	});
    }
-
-// Lazyload images
