@@ -1253,11 +1253,17 @@
 			width: 31.33333333333%;
 		}
 
+		section .column1 {
+			width: 50%
+		}
+
 			@media screen and (max-width: 980px) {
 
 				section .columns.double .column, article .columns.double .column {
 					width: 100%;
 				}
+
+				section .column1
 
 			}
 
