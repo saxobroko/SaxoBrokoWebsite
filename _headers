@@ -1,4 +1,5 @@
 /*
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1
-  Content-Security-Policy: default-src data: 'unsafe-inline' 'unsafe-eval' saxobroko.com *.alexametrics.com www.google-analytics.com *.google.com.au *.googleadservices.com www.googletagservices.com *.doubleclick.net *.googlesyndication.com *.google.com *.youtube.com *.cloudflare.com *.saxobroko.com *.cloudfront.net *.gstatic.com *.statically.io
+  Content-Security-Policy: default-src 'unsafe-inline' 'unsafe-eval' saxobroko.com *.alexametrics.com www.google-analytics.com *.google.com.au *.googleadservices.com www.googletagservices.com *.doubleclick.net *.googlesyndication.com *.google.com *.youtube.com *.cloudflare.com *.saxobroko.com *.cloudfront.net *.gstatic.com *.statically.io; object-src 'none'; upgrade-insecure-requests; disown-opener; base-uri https://saxobroko.com; manifest-src 'self'
+  Access-Control-Allow-Origin: *
