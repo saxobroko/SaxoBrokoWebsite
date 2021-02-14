@@ -1261,7 +1261,7 @@
 
 				section .columns.double .column, article .columns.double .column {
 					width: 100%;
-				}
+			}}
 
 	header p {
 		position: relative;
