@@ -1,0 +1,13 @@
+{
+  "name": "netlify-local-plugins",
+  "description": "This directory contains Build plugins that have been automatically installed by Netlify.",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Netlify",
+  "license": "MIT",
+  "dependencies": {
+    "@netlify/plugin-sitemap": "0.7.0",
+    "netlify-plugin-hashfiles": "4.0.2",
+    "netlify-plugin-submit-sitemap": "0.2.3"
+  }
+}
