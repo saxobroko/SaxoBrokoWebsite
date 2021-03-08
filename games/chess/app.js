@@ -14,10 +14,10 @@ app = {
     // initialize firebase
     firebase: (function () {
         window.firebase.initializeApp({
-        	apiKey: "AIzaSyDXuxUGOdzHfbgV5hmYYCym5dFY1dvnxmE",
-        	authDomain: "chess-60b6b.firebaseapp.com",
-        	databaseURL: "https://chess-60b6b.firebaseio.com",
-        	storageBucket: "chess-60b6b.appspot.com",
+        	apiKey: "AIzaSyASLIpAxRFqU0nCCVvqFp2DxDFUKA44fAg",
+        	authDomain: "anuvs-chessroom-ba1fc.firebaseapp.com",
+        	databaseURL: "https://anuvs-chessroom-ba1fc.firebaseio.com",
+        	storageBucket: "anuvs-chessroom-ba1fc.appspot.com",
         });
         return window.firebase;
     })(),
