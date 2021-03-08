@@ -18,8 +18,8 @@
 
   <!-- Include example userlist script / CSS.
        Can be downloaded from: https://github.com/firebase/firepad/tree/master/examples/ -->
-  <script src="firepad-userlist.js"></script>
-  <link rel="stylesheet" href="firepad-userlist.css" />
+  <script src="assets/js/firepad-userlist.js"></script>
+  <link rel="stylesheet" href="assets/css/firepad-userlist.css" />
 <!-- Start Alexa Certify Javascript -->
 <script type="text/javascript">
 _atrk_opts = { atrk_acct:"PW1xv1O7kI20L7", domain:"saxobroko.com",dynamic: true};
@@ -163,7 +163,7 @@ html{
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
-    user-select:none
+    user-select:none;
     transition: transform 0.3s;
 }
 
@@ -205,7 +205,7 @@ html{
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
-    fill:rgba(0,0,0,.5)
+    fill:rgba(0,0,0,.5);
 	transition: transform 0.3s;
 }
 .sbx-google__reset:focus{
@@ -227,7 +227,6 @@ html{
     bottom:0;
     content:'';
     width:25px;
-     left center
 }
 .trashicon{
     position:absolute;
@@ -236,7 +235,6 @@ html{
     bottom:0;
     content:'';
     width:25px;
-     left center
 }
 .sbx-google__input:focus,.sbx-google__input:hover{
     box-shadow:0 0 5px #fff
@@ -245,43 +243,43 @@ html{
     position:absolute;
     top:2%;
     right:2%;
-    z-index:3
+    z-index:3;
 }
 .glow{
-    text-shadow:#000 0 0 10px,#000 0 0 10px,#000 0 0 10px,#000 0 0 10px,#000 0 0 10px,#000 0 0 10px
+    text-shadow:#000 0 0 10px,#000 0 0 10px,#000 0 0 10px,#000 0 0 10px,#000 0 0 10px,#000 0 0 10px;
 }
 body{
-    background-color:#373737
+    background-color:#373737;
 }
 .bgimg,.bgimg2,.bgimg3{
     min-height:100%;
-    max-height:100%
+    max-height:100%;
 }
 .bgimg2,.bgimg3{
     z-index:2;
-    position:relative
+    position:relative;
 }
 .bgimg,.bgimg3{
     background-color:#000;
-    background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23909090' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E")
+    background-image:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23909090' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 .myName{
-    font-size:5vw
+    font-size:5vw;
 }
 .side{
-    position:absolute
+    position:absolute;
 }
 .hide{
-    display:none
+    display:none;
 }
 .bob-square{
     position:absolute;
     bottom:5%;
-    right:1%
+    right:1%;
 }
 body{
     font-family:Lato,sans-serif;
-    transition:background-color .5s
+    transition:background-color .5s;
 }
 .sidenav1{
     height:100%;
@@ -293,7 +291,7 @@ body{
     background-color:#111;
     overflow-x:hidden;
     transition:.5s;
-    padding-top:60px
+    padding-top:60px;
 }
 .sidenav1 a{
     padding:8px 8px 8px 32px;
@@ -301,38 +299,38 @@ body{
     font-size:25px;
     color:#818181;
     display:block;
-    transition:.3s
+    transition:.3s;
 }
 .sidenav1 a:hover{
-    color:#f1f1f1
+    color:#f1f1f1;
 }
 .sidenav1 .closebtn{
     position:absolute;
     top:0;
     right:25px;
     font-size:36px;
-    margin-left:50px
+    margin-left:50px;
 }
 #main{
     transition:margin-left .5s;
-    padding:16px
+    padding:16px;
 }
 @media screen and (max-height:450px){
     .sidenav1{
-        padding-top:15px
+        padding-top:15px;
     }
     .sidenav1 a{
-        font-size:18px
+        font-size:18px;
     }
 }
 .Menu69{
     position:absolute;
     top:1%;
-    left:4%
+    left:4%;
 }
 .avatar1{
     z-index:1;
-    position:absolute
+    position:absolute;
 }
 .pace {
     -webkit-pointer-events: none;
@@ -396,7 +394,7 @@ a {
     stroke-width:0;
     width:70px;
     stroke:currentColor;
-    fill:currentColor
+    fill:currentColor;
 }
 #dark{
     display:none;
@@ -405,7 +403,7 @@ a {
     display:inline-block;
 }
 .w3-bar-item{
-    height:15%
+    height:15%;
 }
 a{
     scroll-behavior: smooth;
@@ -509,7 +507,7 @@ a{
     }
   </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://saxobroko.com/js/tagman.js"></script>
+<script async src="js/tagman.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

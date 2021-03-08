@@ -3,7 +3,7 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
-
+@font-face {font-display: swap;}
 /* Reset */
 .darkmode-toggle {z-index: 11; width: 4rem!important; height: 4rem!important;}
 .darkmode--activated h2, .darkmode--activated h1{
@@ -823,7 +823,7 @@
 			margin-top: 4em;
 		}
 
-		.gallery .content {
+		.gallery .content, .gallery .content2 {
 			display: -ms-flexbox;
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -1253,13 +1253,15 @@
 			width: 31.33333333333%;
 		}
 
+		section .column1 {
+			width: 50%
+		}
+
 			@media screen and (max-width: 980px) {
 
 				section .columns.double .column, article .columns.double .column {
 					width: 100%;
-				}
-
-			}
+			}}
 
 	header p {
 		position: relative;
@@ -1444,7 +1446,7 @@
 
 /* Banner */
 
-	body.is-loading #banner > .inner {
+	body.is-loading #banner > .inner, body.is-loading #banner2 > .inner {
 		opacity: 0;
 		-moz-transform: translateY(1em);
 		-webkit-transform: translateY(1em);
@@ -1473,7 +1475,36 @@
 		height: 75vh;
 		position: relative;
 		background: #000;
-		background-image: url('https://cdn.statically.io/img/saxobroko.com/f=auto/new/images/banner.jpg');
+		background-image: url('https://lsjvctvj.tinifycdn.com/new/images/banner.jpg');
+		background-size: cover;
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-position: center;
+		text-align: center;
+		color: #FFF;
+	}
+	#banner2 {
+		display: -ms-flexbox;
+		-ms-flex-pack: center;
+		-ms-flex-align: center;
+		padding: 8em 0 6em 0;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		min-height: 75vh;
+		height: 75vh;
+		position: relative;
+		background: #000;
+		background-image: url('https://lsjvctvj.tinifycdn.com/images/eco.png');
 		background-size: cover;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
@@ -1482,7 +1513,7 @@
 		color: #FFF;
 	}
 
-		#banner:before {
+		#banner:before, #banner2:before {
 			-moz-transition: opacity 3s ease;
 			-webkit-transition: opacity 3s ease;
 			-ms-transition: opacity 3s ease;
@@ -1503,7 +1534,7 @@
 			z-index: 1;
 		}
 
-		#banner .inner {
+		#banner .inner, #banner2 .inner {
 			-moz-transform: none;
 			-webkit-transform: none;
 			-ms-transform: none;
@@ -1518,7 +1549,7 @@
 			padding: 0 2em;
 		}
 
-		#banner h1 {
+		#banner h1, #banner2 h1 {
 			font-size: 4em;
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
@@ -1526,19 +1557,19 @@
 			color: #FFF;
 		}
 
-		#banner p {
+		#banner p, #banner2 p {
 			font-size: 1.5em;
 			margin-bottom: 1.75em;
 		}
 
-		#banner a {
+		#banner a, #banner2 a {
 			color: #FFF;
 			text-decoration: none;
 		}
 
 		@media screen and (max-width: 1280px) {
 
-			#banner h1 {
+			#banner h1, #banner2 h1 {
 				font-size: 3.5em;
 			}
 
@@ -1546,15 +1577,15 @@
 
 		@media screen and (max-width: 736px) {
 
-			#banner {
+			#banner, #banner2 {
 				background-attachment: scroll;
 			}
 
-				#banner h1 {
+				#banner h1, #banner2 h1 {
 					font-size: 2.25em;
 				}
 
-				#banner p {
+				#banner p, #banner2 p {
 					font-size: 1.25em;
 				}
 
@@ -1604,7 +1635,7 @@
 		#footer .copyright {
 			color: #717171;
 			font-size: 0.9em;
-			margin: 0 0 2em 0;
+			margin: 0 0 2em 20em;
 			padding: 0 1em;
 			text-align: center;
 		}
