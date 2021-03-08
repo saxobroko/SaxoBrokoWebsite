@@ -82,8 +82,8 @@ app = {
             this.joinGame(idCookie, playerCookie);
     },
     reset: function () {
-        window.history.pushState({ gameID: '' }, 'saxobroko.com', '/games/chess/index.html');
-        window.location.reload();
+        // window.history.pushState({ gameID: '' }, 'chessroom.ml', '/');
+        // window.location.reload();
     },
     updateSpectators: function () {
         var that = this;
@@ -255,7 +255,7 @@ app = {
                 that.block.on('info', { text: 'Spectators: ' + snapshot.val() });
         });
         window.addEventListener('beforeunload', this.disconnect);
-    	window.history.pushState({ gameID: id }, 'saxobroko.com/games/chess/ ' + id, id);
+    	window.history.pushState({ gameID: id }, 'chessroom.ml ' + id, id);
     	this.block.on('id', {
             action: 'set',
             id: id
