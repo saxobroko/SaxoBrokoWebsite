@@ -626,74 +626,7 @@
 			}
 
 		}
-
-/* Contact */
-
-	#contact {
-		display: -ms-flexbox;
-		-ms-flex-pack: justify;
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-moz-justify-content: space-between;
-		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
-		justify-content: space-between;
-		background: #ececec;
-	}
-
-		#contact form {
-			margin: 0;
-		}
-
-		#contact .icons {
-			margin-bottom: 1em;
-		}
-
-		#contact .column {
-			padding: 3.5em 0 1.5em 0;
-			padding-left: 3.5em;
-			padding-right: 3.5em;
-			width: 50%;
-		}
-
-			#contact .column.social {
-				background: #e6e6e6;
-			}
-
-			@media screen and (max-width: 980px) {
-
-				#contact .column {
-					padding: 2em 0 0.1em 0;
-					padding-left: 2em;
-					padding-right: 2em;
-				}
-
-			}
-
-			@media screen and (max-width: 736px) {
-
-				#contact .column {
-					width: 100%;
-				}
-
-			}
-
-			@media screen and (max-width: 480px) {
-
-				#contact .column {
-					padding: 1em 0 0.1em 0;
-					padding-left: 1em;
-					padding-right: 1em;
-				}
-
-			}
-
+		
 /* Form */
 
 	form {
@@ -1680,7 +1613,7 @@
 		height: 75vh;
 		position: relative;
 		background: #000;
-		background-image: url('https://lsjvctvj.tinifycdn.com/images/eco.png');
+		background-image: url('https://cdn.statically.io/img/saxobroko.com/f=auto/images/eco.png');
 		background-size: cover;
 		background-attachment: fixed;
 		background-repeat: no-repeat;
@@ -1811,9 +1744,10 @@
 		#footer .copyright {
 			color: #717171;
 			font-size: 0.9em;
-			margin: 0 0 2em 20em;
+			margin: 0 0 2em 0;
 			padding: 0 1em;
 			text-align: center;
+			margin: 1em 10%;
 		}
 
 		@media screen and (max-width: 736px) {
