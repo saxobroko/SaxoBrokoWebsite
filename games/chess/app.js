@@ -14,10 +14,10 @@ app = {
     // initialize firebase
     firebase: (function () {
         window.firebase.initializeApp({
-        	apiKey: "AIzaSyDXuxUGOdzHfbgV5hmYYCym5dFY1dvnxmE",
-        	authDomain: "chess-60b6b.firebaseapp.com",
-        	databaseURL: "https://chess-60b6b.firebaseio.com",
-        	storageBucket: "chess-60b6b.appspot.com",
+        	apiKey: "AIzaSyASLIpAxRFqU0nCCVvqFp2DxDFUKA44fAg",
+        	authDomain: "anuvs-chessroom-ba1fc.firebaseapp.com",
+        	databaseURL: "https://anuvs-chessroom-ba1fc.firebaseio.com",
+        	storageBucket: "anuvs-chessroom-ba1fc.appspot.com",
         });
         return window.firebase;
     })(),
@@ -82,8 +82,8 @@ app = {
             this.joinGame(idCookie, playerCookie);
     },
     reset: function () {
-        window.history.pushState({ gameID: '' }, 'saxobroko.com', '/games/chess/index.html');
-        window.location.reload();
+        // window.history.pushState({ gameID: '' }, 'chessroom.ml', '/');
+        // window.location.reload();
     },
     updateSpectators: function () {
         var that = this;
@@ -255,7 +255,7 @@ app = {
                 that.block.on('info', { text: 'Spectators: ' + snapshot.val() });
         });
         window.addEventListener('beforeunload', this.disconnect);
-    	window.history.pushState({ gameID: id }, 'saxobroko.com/games/chess/ ' + id, id);
+    	window.history.pushState({ gameID: id }, 'chessroom.ml ' + id, id);
     	this.block.on('id', {
             action: 'set',
             id: id
