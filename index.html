@@ -142,6 +142,18 @@
 		return(rect.top>=0&&rect.left>=0&&rect.top<=(window.innerHeight||document.documentElement.clientHeight))}
 		var images=new Array(),query=$q('img.lazy'),processScroll=function(){for(var i=0;i<images.length;i++){if(elementInViewport(images[i])){loadImage(images[i],function(){images.splice(i,i);});}};};for(var i=0;i<query.length;i++){images.push(query[i]);};processScroll();addEventListener('scroll',processScroll);}(this);
 	</script>
+	<script type=”application/ld+json”>
+		{
+		“@context”: “http://schema.org”,
+		“@type”: “WebSite”,
+		“url”: “https://saxobroko.com/”,
+		“potentialAction”: {
+		“@type”: “SearchAction”,
+		“target”: “https://saxobroko.com/search?q={search_term_string}”,
+		“query-input”: “required name=search_term_string”
+		}
+		}
+	</script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous"></script>
     <script defer src="https://lsjvctvj.tinifycdn.com/assets/js/jquery.scrolly.min.js"></script>
     <script defer src="https://lsjvctvj.tinifycdn.com/assets/js/skel.min.js"></script>
