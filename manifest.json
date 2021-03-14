@@ -7,7 +7,7 @@
     "display": "standalone",
     "start_url": "https://saxobroko.com/",
     "background_color": "#000000",
-    "theme_color": "transparent",
+    "theme_color": "#0d1217",
     "description": "Saxo_Broko's official website of doom, or whatever.",
     "orientation": "portrait-primary",
     "related_applications": [],
