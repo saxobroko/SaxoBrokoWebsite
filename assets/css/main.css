@@ -3,7 +3,6 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 */
-@font-face {font-display: swap;}
 /* Reset */
 .darkmode-toggle {z-index: 11; width: 4rem!important; height: 4rem!important;}
 .darkmode--activated h2, .darkmode--activated h1{
