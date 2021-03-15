@@ -145,3 +145,22 @@ img.src=src;}
 function elementInViewport(el){var rect=el.getBoundingClientRect()
 return(rect.top>=0&&rect.left>=0&&rect.top<=(window.innerHeight||document.documentElement.clientHeight))}
 var images=new Array(),query=$q('img.lazy'),processScroll=function(){for(var i=0;i<images.length;i++){if(elementInViewport(images[i])){loadImage(images[i],function(){images.splice(i,i);});}};};for(var i=0;i<query.length;i++){images.push(query[i]);};processScroll();addEventListener('scroll',processScroll);}(this);
+
+// Fallback css
+(function($){
+    var links = {};
+
+    $( "link[data-fallback]" ).each( function( index, link ) {
+        links[link.href] = link;
+    });
+
+    $.each( document.styleSheets, function(index, sheet) {
+        if(links[sheet.href]) {
+            var rules = sheet.rules ? sheet.rules : sheet.cssRules;
+            if (rules.length == 0) {
+                link = $(links[sheet.href]);
+                link.attr( 'href', link.attr("data-fallback") );
+            }
+        }
+    });
+})(jQuery);
