@@ -1,1 +1,71 @@
-{"name":"Saxo_Broko's Website","short_name":"Saxo_Broko","theme_color":"#737373","background_color":"#717171","gcm_sender_id":"482941778795","gcm_sender_id_comment":"Do not change the GCM Sender ID","display":"standalone","scope":"/","start_url":"/","icons":[{"src":"images/icons/icon-72x72.png","sizes":"72x72","type":"image/png"},{"src":"images/icons/icon-96x96.png","sizes":"96x96","type":"image/png"},{"src":"images/icons/icon-128x128.png","sizes":"128x128","type":"image/png"},{"src":"images/icons/icon-144x144.png","sizes":"144x144","type":"image/png"},{"src":"images/icons/icon-152x152.png","sizes":"152x152","type":"image/png"},{"src":"images/icons/icon-192x192.png","sizes":"192x192","type":"image/png"},{"src":"images/icons/icon-384x384.png","sizes":"384x384","type":"image/png"},{"src":"images/icons/icon-512x512.png","sizes":"512x512","type":"image/png"},{"src":"images/icons/maskable_icon.png","sizes":"640x640","type":"image/png","purpose":"any maskable"}]}
+{
+    "dir": "ltr",
+    "lang": "English",
+    "name": "Saxo_Broko",
+    "short_name": "SaxoBroko",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "https://saxobroko.com/",
+    "background_color": "#000000",
+    "theme_color": "#0d1217",
+    "description": "Saxo_Broko's official website of doom, or whatever.",
+    "orientation": "portrait-primary",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+	    {
+      "src": "https://saxobroko.com/favicon.png",
+      "type": "image/png",
+      "sizes": "30x32"
+    },
+	{
+      "src": "https://saxobroko.com/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://saxobroko.com/images/ico/maskable_icon_x48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://saxobroko.com/images/ico/maskable_icon_x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://saxobroko.com/images/ico/maskable_icon_x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://saxobroko.com/images/ico/maskable_icon_x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://saxobroko.com/images/ico/maskable_icon_x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://saxobroko.com/images/ico/maskable_icon_x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://saxobroko.com/images/ico/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }	
+	],
+    "url": "https://saxobroko.com"
+}
