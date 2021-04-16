@@ -1,5 +1,4 @@
 ﻿(function($) {
-
 	skel.breakpoints({
 		xlarge: '(max-width: 1680px)',
 		large: '(max-width: 1280px)',
@@ -7,69 +6,32 @@
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)'
 	});
-
 	$(function() {
-
-		//var	$window = $(window),
-		//	$body = $('body');
-//
-		// Disable animations/transitions until the page has loaded.
-		//	$body.addClass('is-loading');
-//
-		//	$window.on('load', function() {
-		//		window.setTimeout(function() {
-		//			$body.removeClass('is-loading');
-		//		}, 100);
-		//	});
-
-		// Fix: Placeholder polyfill.
 			$('form').placeholder();
-
-		// Prioritize "important" elements on medium.
 			skel.on('+medium -medium', function() {
 				$.prioritize(
 					'.important\\28 medium\\29',
 					skel.breakpoint('medium').active
 				);
 			});
-
-		// Scrolly.
 			$('.scrolly').scrolly();
-
-		// Gallery.
 			$('.gallery').each(function() {
-
 				var	$gallery = $(this),
 					$content = $gallery.find('.content');
-
-				// Tabs.
 					$gallery.each( function() {
-
 						var $this = $(this),
 							$tabs = $this.find('.tabs a'),
 							$media = $this.find('.media');
-
 						$tabs.on('click', function(e) {
-
 							var $this = $(this),
 								tag = $this.data('tag');
-
-							// Prevent default.
 							 	e.preventDefault();
-
-							// Remove active class from all tabs.
 								$tabs.removeClass('active');
-
-							// Reapply active class to current tab.
 								$this.addClass('active');
-
-							// Hide media that do not have the same class as the clicked tab.
 								$media
 									.fadeOut('fast')
 									.each(function() {
-
 										var $this = $(this);
-
 										if ($this.hasClass(tag))
 											$this
 												.fadeOut('fast')
@@ -78,24 +40,17 @@
 													$this.fadeIn();
 													next();
 												});
-
 									});
-
 						});
-
 					});
-
-
 			});
-
 	});
-
 })(jQuery);
 
 //Image Popup
 $(document).ready(function() {
-  // $('.imagepop').magnificPopup({type:'image'});
   $('.popyoutube').magnificPopup({type:'iframe'});
+  $('.popspotify').magnificPopup({type:'iframe',mainClass:'spotifypop'});
   $('.content').magnificPopup({delegate: 'a', type: 'image'});
 });
 
@@ -179,22 +134,3 @@ for (i = 0; i < dropdown.length; i++) {
   }
   });
 }
-
-// Background img
-(() => {
-  'use strict';
-  // Page is loaded
-  const objects = document.getElementsByClassName('asyncImage');
-  Array.from(objects).map((item) => {
-    // Start loading image
-    const img = new Image();
-    img.src = item.dataset.src;
-    // Once image is loaded replace the src of the HTML element
-    img.onload = () => {
-      item.classList.remove('asyncImage');
-      return item.nodeName === 'IMG' ? 
-        item.src = item.dataset.src :        
-        item.style.backgroundImage = `url(${item.dataset.src})`;
-    };
-  });
-})();
