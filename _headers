@@ -1,6 +1,6 @@
 /*
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1
-  Content-Security-Policy: default-src data: 'unsafe-inline' 'unsafe-eval' saxobroko.com *.alexametrics.com www.google-analytics.com *.google.com.au *.googleadservices.com www.googletagservices.com *.doubleclick.net *.googlesyndication.com *.google.com *.youtube.com *.cloudflare.com *.saxobroko.com *.cloudfront.net *.gstatic.com *.statically.io www.w3schools.com cdn.firebase.com docs-7bbbf.firebaseio.com; object-src 'none'; upgrade-insecure-requests; base-uri https://saxobroko.com; manifest-src 'self'; frame-ancestors 'none';
+  Content-Security-Policy: default-src data: 'unsafe-inline' 'unsafe-eval' saxobroko.com *.alexametrics.com www.google-analytics.com *.google.com.au *.googleadservices.com www.googletagservices.com *.doubleclick.net *.googlesyndication.com *.google.com *.youtube.com *.cloudflare.com *.saxobroko.com *.cloudfront.net *.gstatic.com *.statically.io www.w3schools.com cdn.firebase.com *.firebaseio.com *.cloudflareinsights.com *.a2z.com; object-src 'none'; upgrade-insecure-requests; base-uri https://saxobroko.com; manifest-src 'self'; frame-ancestors 'none';
   Access-Control-Allow-Origin: saxobroko.com
   Vary: Origin
