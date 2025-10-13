@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Saxo_Broko</title>
+    
+    <!-- SEO and Meta Tags -->
+    <meta name="description" content="Saxo_Broko's official website featuring portfolio, games, tools, and more. World renowned Unicorn Rider.">
+    <meta name="keywords" content="saxo broko, portfolio, games, tools, web development, unicorn rider">
+    <meta name="author" content="Saxo_Broko">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saxobroko.com/">
+    <meta property="og:title" content="Saxo_Broko - World Renowned Unicorn Rider">
+    <meta property="og:description" content="Personal website featuring portfolio, games, and tools">
+    <meta property="og:image" content="https://saxobroko.com/images/banner.webp">
+    
+    <!-- PWA and Icons -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <meta name="theme-color" content="#19b5fe">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/assets/css/main.min.css" as="style">
+    <link rel="preload" href="https://cdn.statically.io/img/saxobroko.com/f=auto,w=400,h=300/images/banner.webp" as="image">
+    
+    <!-- Critical CSS (inline for performance) -->
+    <style>
+        /* Critical above-the-fold styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif; 
+            line-height: 1.65; 
+            color: #22313f; 
+            background: #fff;
+        }
+        .page-wrap { 
+            display: flex; 
+            min-height: 100vh; 
+        }
+        #nav { 
+            background: #0d1217; 
+            position: fixed; 
+            width: 4rem; 
+            height: 100vh; 
+            z-index: 1000;
+        }
+        #nav ul { 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+            position: fixed; 
+            top: 1em; 
+            left: 0; 
+        }
+        #nav ul li { 
+            padding: 0; 
+            width: 3.75rem; 
+            text-align: center; 
+            margin-bottom: 1em; 
+        }
+        #nav ul li a { 
+            color: rgba(255,255,255,.5); 
+            text-decoration: none; 
+            font-size: 1.5rem; 
+            display: block; 
+            padding: 0.5rem;
+        }
+        #nav ul li a:hover { color: #fff; }
+        #nav ul li a.active { color: #19b5fe; }
+        #main { 
+            margin-left: 4rem; 
+            width: calc(100% - 4rem); 
+            min-height: 100vh; 
+            background: #f1f1f1;
+        }
+        #banner { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 75vh; 
+            position: relative; 
+            background: #000 url('https://cdn.statically.io/img/saxobroko.com/f=auto,w=400,h=300/images/banner.webp') center/cover; 
+            text-align: center; 
+            color: #fff;
+        }
+        #banner::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            right: 0; 
+            bottom: 0; 
+            background: rgba(0,0,0,0.65); 
+        }
+        #banner .inner { 
+            position: relative; 
+            z-index: 2; 
+            padding: 0 2rem; 
+        }
+        #banner h1 { 
+            font-size: 4rem; 
+            line-height: 1; 
+            margin: 0 0 0.5rem; 
+            color: #fff; 
+        }
+        #banner p { 
+            font-size: 1.5rem; 
+            margin-bottom: 1.75rem; 
+        }
+        .searchbox { 
+            display: inline-block; 
+            width: 200px; 
+        }
+        .sbx-custom2__input { 
+            width: 100%; 
+            padding: 0.5rem 2rem 0.5rem 2.5rem; 
+            border: 2px solid rgba(255,255,255,0.2); 
+            border-radius: 25px; 
+            background: rgba(255,255,255,0.1); 
+            color: #fff; 
+        }
+        .sbx-custom2__input::placeholder { 
+            color: rgba(255,255,255,0.7); 
+        }
+        @media (max-width: 768px) {
+            .page-wrap { flex-direction: column; }
+            #nav { position: static; width: 100%; height: auto; }
+            #nav ul { position: static; display: flex; justify-content: center; }
+            #nav ul li { width: auto; margin: 0 0.5rem; }
+            #main { margin-left: 0; width: 100%; }
+            #banner h1 { font-size: 2.5rem; }
+            #banner p { font-size: 1.25rem; }
+        }
+    </style>
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="/assets/css/main.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main.min.css"></noscript>
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Saxo_Broko",
+        "url": "https://saxobroko.com",
+        "description": "World renowned Unicorn Rider",
+        "sameAs": [
+            "https://blog.saxobroko.com"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link" style="position: absolute; top: -40px; left: 6px; background: #000; color: #fff; padding: 8px; text-decoration: none; z-index: 9999;" 
+       onfocus="this.style.top='6px'" onblur="this.style.top='-40px'">Skip to main content</a>
+    
+    <div class="page-wrap">
+        <!-- Navigation -->
+        <nav id="nav" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="/" class="active" aria-label="Home"><span aria-hidden="true">🏠</span></a></li>
+                <li><a href="/portfolio" aria-label="Portfolio"><span aria-hidden="true">📸</span></a></li>
+                <li><a href="/games" aria-label="Games"><span aria-hidden="true">🎮</span></a></li>
+                <li><a href="/tools" aria-label="Tools"><span aria-hidden="true">🔧</span></a></li>
+                <li><a href="/eco" aria-label="Eco"><span aria-hidden="true">🍃</span></a></li>
+                <li><a href="/oscar" aria-label="Oscar"><span aria-hidden="true">🐠</span></a></li>
+                <li><a href="https://blog.saxobroko.com" aria-label="Blog" rel="external"><span aria-hidden="true">✏️</span></a></li>
+                <li><a href="https://saxobroko.kampsite.co/" aria-label="Forum" rel="external"><span aria-hidden="true">💬</span></a></li>
+                <li><a href="https://share.saxobroko.com" aria-label="Share" rel="external"><span aria-hidden="true">📖</span></a></li>
+                <li><a href="https://status.saxobroko.com" aria-label="Status" rel="external"><span aria-hidden="true">✅</span></a></li>
+                <li><a href="/search" aria-label="Search"><span aria-hidden="true">🔍</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main" role="main">
+            <!-- Banner -->
+            <section id="banner">
+                <div class="inner">
+                    <h1>Saxo_Broko</h1>
+                    <p>World renowned Unicorn Rider</p>
+                    <div style="width: 200px; margin: 0 auto;">
+                        <form novalidate method="get" action="/search" class="searchbox sbx-custom2">
+                            <div role="search" class="sbx-medium__wrapper">
+                                <input type="search" name="q" placeholder="Search for the things" 
+                                       autocomplete="off" required class="sbx-custom2__input" 
+                                       style="padding-left: 2.5rem;">
+                                <button type="submit" title="Submit your search query." 
+                                        class="sbx-custom2__submit" 
+                                        style="position: absolute; left: 0; top: 0; width: 2.5rem; height: 100%; border: none; background: none; color: rgba(255,255,255,0.7);">
+                                    <span aria-hidden="true">🔍</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer id="footer" role="contentinfo" style="padding: 2rem 0; background: #e2e2e2;">
+                <nav class="navbar" style="display: flex; justify-content: center; flex-wrap: wrap; background: #e5e5e5; margin-bottom: 20px;">
+                    <a href="/" class="active" style="padding: 14px 5%; text-decoration: none; color: #000;">Home</a>
+                    <a href="/portfolio" style="padding: 14px 5%; text-decoration: none; color: #000;">Portfolio</a>
+                    <a href="/games" style="padding: 14px 5%; text-decoration: none; color: #000;">Games</a>
+                    <a href="/tools" style="padding: 14px 5%; text-decoration: none; color: #000;">Tools</a>
+                    <a href="/eco" style="padding: 14px 5%; text-decoration: none; color: #000;">Eco</a>
+                    <a href="https://blog.saxobroko.com" style="padding: 14px 5%; text-decoration: none; color: #000;">Blog</a>
+                </nav>
+                
+                <div class="copyright" style="color: #717171; font-size: 0.9rem; text-align: center; margin: 0 10%;">
+                    <p>&copy; Saxo_Broko 2015-<span id="current-year"></span>.</p>
+                    <p style="margin-top: 1rem;">Saxo_Broko acknowledges the Wurundjeri people of the Kulin Nation and other Traditional Custodians of country throughout Australia and their connections to the land, sea and community. We pay our respect to their elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Critical JavaScript inline for immediate functionality -->
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Simple navigation active state
+        const currentPath = window.location.pathname;
+        document.querySelectorAll('#nav a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath || (currentPath === '/' && href === '/')) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Simple dark mode toggle
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark)) {
+            document.documentElement.style.filter = 'invert(1) hue-rotate(180deg)';
+            document.querySelectorAll('img, video, iframe').forEach(el => {
+                el.style.filter = 'invert(1) hue-rotate(180deg)';
+            });
+        }
+        
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            // Measure page load time
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            console.log('Page load time:', loadTime + 'ms');
+            
+            // Measure largest contentful paint
+            new PerformanceObserver((entryList) => {
+                const entries = entryList.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                console.log('LCP:', lastEntry.startTime);
+            }).observe({entryTypes: ['largest-contentful-paint']});
+        });
+    </script>
+    
+    <!-- Service Worker registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed:', err));
+            });
+        }
+    </script>
+    
+    <!-- Load modern JavaScript asynchronously -->
+    <script src="/assets/js/modern.js" defer></script>
+    
+    <!-- Real User Monitoring (Production only) -->
+    <script src="/assets/js/rum.js" defer></script>
+</body>
+</html>

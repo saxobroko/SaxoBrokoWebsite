@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{TITLE}} - Saxo_Broko</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="keywords" content="saxo broko, portfolio, games, tools, web development">
+    <meta name="author" content="Saxo_Broko">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saxobroko.com/">
+    <meta property="og:title" content="{{TITLE}} - Saxo_Broko">
+    <meta property="og:description" content="{{DESCRIPTION}}">
+    <meta property="og:image" content="https://saxobroko.com/images/banner.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://saxobroko.com/">
+    <meta property="twitter:title" content="{{TITLE}} - Saxo_Broko">
+    <meta property="twitter:description" content="{{DESCRIPTION}}">
+    <meta property="twitter:image" content="https://saxobroko.com/images/banner.webp">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#19b5fe">
+    <meta name="msapplication-TileColor" content="#19b5fe">
+    <meta name="theme-color" content="#19b5fe">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/assets/css/main-optimized.css" as="style">
+    <link rel="preload" href="/assets/js/modern.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" as="style">
+    
+    <!-- Critical CSS (inline) -->
+    <style>
+        /* Critical above-the-fold styles */
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:#22313f}
+        .page-wrap{display:grid;grid-template-columns:4rem 1fr;min-height:100vh}
+        #nav{background:#0d1217;position:fixed;width:4rem;height:100vh;z-index:1000}
+        #main{margin-left:4rem;min-height:100vh}
+        @media(max-width:768px){.page-wrap{grid-template-columns:1fr}#main{margin-left:0}#nav{position:static;width:100%;height:auto}}
+    </style>
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="stylesheet" href="/assets/css/main-optimized.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Saxo_Broko",
+        "url": "https://saxobroko.com",
+        "sameAs": [
+            "https://blog.saxobroko.com",
+            "https://github.com/saxobroko"
+        ],
+        "jobTitle": "Web Developer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Independent"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div class="page-wrap">
+        <!-- Navigation -->
+        <nav id="nav" role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="/" aria-label="Home"><span aria-hidden="true">🏠</span></a></li>
+                <li><a href="/portfolio" aria-label="Portfolio"><span aria-hidden="true">📸</span></a></li>
+                <li><a href="/games" aria-label="Games"><span aria-hidden="true">🎮</span></a></li>
+                <li><a href="/tools" aria-label="Tools"><span aria-hidden="true">🔧</span></a></li>
+                <li><a href="/eco" aria-label="Eco"><span aria-hidden="true">🍃</span></a></li>
+                <li><a href="https://blog.saxobroko.com" aria-label="Blog" rel="external"><span aria-hidden="true">✏️</span></a></li>
+                <li><a href="/search" aria-label="Search"><span aria-hidden="true">🔍</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main" role="main">
+            {{CONTENT}}
+            
+            <!-- Footer -->
+            <footer id="footer" role="contentinfo">
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/">Home</a>
+                    <a href="/portfolio">Portfolio</a>
+                    <a href="/games">Games</a>
+                    <a href="/tools">Tools</a>
+                    <a href="/eco">Eco</a>
+                    <a href="https://blog.saxobroko.com">Blog</a>
+                </nav>
+                
+                <div class="copyright">
+                    <p>&copy; Saxo_Broko 2015-<span id="current-year"></span>.</p>
+                    <p>Saxo_Broko acknowledges the Wurundjeri people of the Kulin Nation and other Traditional Custodians of country throughout Australia and their connections to the land, sea and community. We pay our respect to their elders past and present and extend that respect to all Aboriginal and Torres Strait Islander peoples.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Critical JavaScript for immediate functionality
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCritical);
+        } else {
+            initCritical();
+        }
+        
+        function initCritical() {
+            // Set active navigation
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('#nav a').forEach(link => {
+                if (link.getAttribute('href') === currentPath || 
+                    (currentPath === '/' && link.getAttribute('href') === '/')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    </script>
+    
+    <!-- Load main JavaScript asynchronously -->
+    <script src="/assets/js/modern.js" defer></script>
+    
+    <!-- Service Worker registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW registration failed'));
+            });
+        }
+    </script>
+</body>
+</html>

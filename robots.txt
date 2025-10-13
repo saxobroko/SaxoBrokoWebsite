@@ -1,3 +1,17 @@
-User-Agent: *
+User-agent: *
 Allow: /
 
+# Sitemap
+Sitemap: https://saxobroko.com/sitemap.xml
+
+# Disallow admin/private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow crawling of important resources
+Allow: /assets/
+Allow: /images/
+Allow: /games/
+Allow: /tools/

@@ -1,71 +1,40 @@
 {
-    "dir": "ltr",
-    "lang": "English",
-    "name": "Saxo_Broko",
-    "short_name": "SaxoBroko",
-    "scope": "/",
-    "display": "standalone",
-    "start_url": "https://saxobroko.com/",
-    "background_color": "#000000",
-    "theme_color": "#0d1217",
-    "description": "Saxo_Broko's official website of doom, or whatever.",
-    "orientation": "portrait-primary",
-    "related_applications": [],
-    "prefer_related_applications": false,
-    "icons": [
-	    {
-      "src": "https://saxobroko.com/favicon.png",
-      "type": "image/png",
-      "sizes": "30x32"
-    },
-	{
-      "src": "https://saxobroko.com/images/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
+  "name": "Saxo_Broko - Personal Website",
+  "short_name": "SaxoBroko",
+  "description": "Personal website and portfolio of Saxo_Broko",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#19b5fe",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
     {
-      "src": "https://saxobroko.com/images/ico/maskable_icon_x48.png",
-      "sizes": "48x48",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "https://saxobroko.com/images/ico/maskable_icon_x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "https://saxobroko.com/images/ico/maskable_icon_x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "https://saxobroko.com/images/ico/maskable_icon_x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "https://saxobroko.com/images/ico/maskable_icon_x192.png",
+      "src": "/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "https://saxobroko.com/images/ico/maskable_icon_x384.png",
+      "src": "/android-chrome-384x384.png", 
       "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
-      "src": "https://saxobroko.com/images/ico/maskable_icon.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }	
-	],
-    "url": "https://saxobroko.com"
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180", 
+      "type": "image/png"
+    }
+  ],
+  "categories": ["entertainment", "games", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/images/banner.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide"
+    }
+  ]
 }

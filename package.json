@@ -1,0 +1,44 @@
+{
+  "name": "saxobroko-website",
+  "version": "2.0.0",
+  "description": "Optimized personal website",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run minify-css && webpack --mode=production",
+    "dev": "webpack serve --mode=development --port=3000",
+    "optimize-images": "echo 'Use modern tools like squoosh.app for image optimization'",
+    "minify-css": "cleancss -o assets/css/main.min.css assets/css/main.css",
+    "lint": "eslint assets/js/ --fix",
+    "lighthouse": "npx lighthouse https://saxobroko.com --output=html --output-path=./reports/lighthouse.html",
+    "clean": "rm -rf dist node_modules/.cache",
+    "optimize": "./optimize.sh",
+    "serve": "npx http-server . -p 8080 -c-1",
+    "analyze": "npx webpack-bundle-analyzer dist/js/*.js"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.2",
+    "css-loader": "^6.8.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "terser-webpack-plugin": "^5.3.9",
+    "clean-css-cli": "^5.6.2",
+    "eslint": "^9.12.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "babel-loader": "^9.1.3",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "style-loader": "^3.3.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "lighthouse": "^13.0.0",
+    "http-server": "^14.1.1",
+    "webpack-bundle-analyzer": "^4.10.0"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "core-js": "^3.33.0"
+  }
+}
