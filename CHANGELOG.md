@@ -27,6 +27,7 @@ All notable changes to this project are documented in this file.
 - Root archive `portfolio.html` / `oscar.html` lightbox and thumb links rewritten off discontinued Statically endpoints (Eleventy `src/` templates already used `/images/...`)
 - Portfolio Magnific Popup restored so gallery images open in a lightbox again (`delegate: 'a'` on `.content`, matching pre-migration behavior)
 - Replaced corrupted `assets/js/magnific.js` (syntax error from a bad pretty-print) with official Magnific Popup v1.1.0
+- Restored jQuery 3.5.1 for gallery pages (jQuery 4.0-pre removed `$.isFunction`, which Magnific Popup still calls); kept the old build as `jquery-4.0.0-pre.min.js`
 - Content-Security-Policy blocking Google Custom Search on `/search`
 - Home search submit/clear controls restored to SVG sprite icons (CSS expects icon buttons)
 - Nav/footer home links use `/` instead of `/#`
