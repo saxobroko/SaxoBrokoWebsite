@@ -1,0 +1,11 @@
+const fs = require("fs");
+const css = fs.readFileSync("assets/css/main.css", "utf8");
+const i = css.indexOf("eco.webp");
+console.log("eco css:", css.slice(Math.max(0, i - 70), i + 30));
+console.log("css statically left:", (css.match(/cdn\.statically\.io/g) || []).length);
+const p = fs.readFileSync("src/portfolio.njk", "utf8");
+console.log("portfolio statically:", (p.match(/cdn\.statically\.io/g) || []).length);
+console.log("portfolio /images/thumbs:", (p.match(/\/images\/thumbs\//g) || []).length);
+const g = fs.readFileSync("src/games.njk", "utf8");
+console.log("multitron count:", (g.match(/multitron/g) || []).length);
+console.log("noopener count games:", (g.match(/noopener noreferrer/g) || []).length);
