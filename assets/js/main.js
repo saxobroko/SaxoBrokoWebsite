@@ -48,15 +48,12 @@
 	});
 })(jQuery);
 
-// Image popup (only when Magnific is loaded)
+// Image / embed popups (Magnific) — historic: all gallery .content links open in a popup
 $(document).ready(function() {
   if (!$.fn || !$.fn.magnificPopup) return;
   $('.popyoutube').magnificPopup({type:'iframe'});
   $('.popspotify').magnificPopup({type:'iframe',mainClass:'spotifypop'});
-  $('.content').magnificPopup({delegate: 'a.imagepop, a[class="imagepop"]', type: 'image'});
-  if ($('.content a.imagepop').length === 0) {
-    $('.gallery .content').magnificPopup({delegate: 'a', type: 'image'});
-  }
+  $('.content').magnificPopup({delegate: 'a', type: 'image'});
 });
 
 // Lazyload images
