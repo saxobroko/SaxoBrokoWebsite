@@ -1,0 +1,72 @@
+---
+permalink: "/oscar.html"
+layout: "base.njk"
+title: "Oscar"
+active: "oscar"
+scripts: "gallery"
+pwa: true
+description: "Rest In Peace, Oscar 2020-2022"
+extraScripts: "<script>var video=document.getElementById(\"oscarbg\");var btn=document.getElementById(\"pauseBtn\");function pauseVideo(){if(video.paused){video.play();btn.textContent=\"Pause Video\";}else{video.pause();btn.textContent=\"Play Video\";}}</script>"
+---
+
+<style>
+
+#oscarbg {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+#nobanner{display:-ms-flexbox;-ms-flex-pack:center;-ms-flex-align:center;padding:8em 0 6em;-moz-align-items:center;-webkit-align-items:center;-ms-align-items:center;align-items:center;display:-moz-flex;display:-webkit-flex;display:-ms-flex;display:flex;-moz-justify-content:center;-webkit-justify-content:center;-ms-justify-content:center;justify-content:center;min-height:75vh;height:75vh;position:relative;}
+</style>
+			<video autoplay muted loop id="oscarbg">
+			  <source src="https://alt.saxobroko.com/images/Oscar/feed.mp4" type="video/mp4">
+			  Your browser does not support HTML5 video.
+			</video>
+            <!-- Banner -->
+            <section id="nobanner">
+                <div class="inner">
+                    <h1>Oscar</h1>
+                    <p>2020 - 2022</p>
+                    <ul class="actions">
+                        <li><a href="#galleries" class="button alt scrolly big">See more.</a></li>
+                    </ul>
+					<button id="pauseBtn" onclick="pauseVideo()">Pause Video</button>
+                </div>
+			</section>
+
+            <!-- Gallery -->
+            <section id="galleries">
+
+                <!-- Photo Galleries -->
+                <div class="gallery">
+                    <header class="special">
+                        <h2>Gallery</h2>
+                    </header>
+                    <div class="content">
+                        <div class="media">
+                            <a href="https://www.youtube-nocookie.com/embed/H3gp1JMog1c?autoplay=1&showinfo=0&rel=0" class="popyoutube"> <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/Oscar/vid1.webp" alt="Fishy Just Swimmin 17th July 2020." width="450" height="450" title="Fishy Just Swimmin 17th July 2020." /></a>
+                        </div>
+                        <div class="media">
+                            <a href="https://www.youtube-nocookie.com/embed/i1cdbI48Bak?autoplay=1&showinfo=0&rel=0" class="popyoutube"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/Oscar/vid2.jpg" alt="Elephant Betta Fish swimming around for 2 minutes." width="450" height="450" title="Elephant Betta Fish swimming around for 2 minutes." /></a>
+                        </div>
+                        <div class="media">
+                            <a href="https://www.youtube-nocookie.com/embed/Cb2tpFqhEf8?autoplay=1&showinfo=0&rel=0" class="popyoutube"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/Oscar/vid3.webp" alt="Baby Bladder snail just chilling on glass." width="450" height="450" title="Baby Bladder snail just chilling on glass." /></a>
+                        </div>
+                        <div class="media">
+                            <a href="/images/fulls/04.png" class="imagepop"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/thumbs/04.png" alt="Trip to Mars." width="450" height="450" title="Trip to Mars." /></a>
+                        </div>
+                        <div class="media">
+                            <a href="/images/fulls/05.jpg" class="imagepop"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/thumbs/05.png" alt="YouTube Cover." width="450" height="450" title="YouTube Cover." /></a>
+                        </div>
+                        <div class="media">
+                            <a href="https://www.youtube-nocookie.com/embed/NBpuxsxWtDI?autoplay=1&showinfo=0&rel=0" class="popyoutube"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/thumbs/06.jpg" alt="Flying." width="450" height="450" title="Flying." /></a>
+                        </div>
+                        <div class="media">
+                            <a href="/images/fulls/07.jpg" class="imagepop"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/thumbs/07.png" alt="Madi's House!" width="450" height="450" title="Madi's House!" /></a>
+                        </div>
+                        <div class="media">
+                            <a href="/images/fulls/08.jpg" class="imagepop"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRA" data-src="/images/thumbs/08.png" alt="Cool grass photo." width="450" height="450" title="Cool grass photo." /></a>
+                        </div>
+                    </div>

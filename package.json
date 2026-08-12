@@ -1,0 +1,17 @@
+{
+  "name": "saxobroko-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Saxo_Broko official website (Eleventy → static HTML)",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+{% include "head.njk" %}
+{{ headExtra | safe }}
+</head>
+<body>
+  <div class="page-wrap">
+    {% include "nav.njk" %}
+    <main id="main">
+      {{ content | safe }}
+      {% if showFooter != false %}
+        {% include "footer.njk" %}
+      {% endif %}
+    </main>
+  </div>
+  {% include "scripts.njk" %}
+</body>
+</html>

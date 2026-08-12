@@ -1,0 +1,41 @@
+{# scripts: lean | dark | shell | gallery #}
+{% if jsonLd %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://saxobroko.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://saxobroko.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endif %}
+{% if scripts == "gallery" %}
+<script defer src="/assets/js/jquery.min.js"></script>
+<script defer src="/assets/js/magnific.js"></script>
+<script defer src="/assets/js/jquery.scrolly.min.js"></script>
+<script defer src="/assets/js/skel.min.js"></script>
+<script defer src="/assets/js/util.js"></script>
+<script defer src="/assets/js/main.js"></script>
+{% elif scripts == "shell" %}
+<script defer src="/assets/js/jquery.min.js"></script>
+<script defer src="/assets/js/jquery.scrolly.min.js"></script>
+<script defer src="/assets/js/skel.min.js"></script>
+<script defer src="/assets/js/util.js"></script>
+<script defer src="/assets/js/main.js"></script>
+{% endif %}
+{% if scripts == "dark" or scripts == "gallery" or scripts == "shell" %}
+<script defer src="/assets/js/darkmode.js"></script>
+{% endif %}
+<script defer src="/assets/js/site.js"></script>
+{% if pwa %}
+<script type="module">
+  import '/assets/js/pwaupdate.js';
+  const el = document.createElement('pwa-update');
+  document.body.appendChild(el);
+</script>
+{% endif %}
+{{ extraScripts | safe }}
