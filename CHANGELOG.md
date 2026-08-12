@@ -26,6 +26,7 @@ All notable changes to this project are documented in this file.
 - Statically CDN image URLs returning 403 on portfolio, oscar, and eco CSS backgrounds
 - Root archive `portfolio.html` / `oscar.html` lightbox and thumb links rewritten off discontinued Statically endpoints (Eleventy `src/` templates already used `/images/...`)
 - Portfolio Magnific Popup restored so gallery images open in a lightbox again (`delegate: 'a'` on `.content`, matching pre-migration behavior)
+- Replaced corrupted `assets/js/magnific.js` (syntax error from a bad pretty-print) with official Magnific Popup v1.1.0
 - Content-Security-Policy blocking Google Custom Search on `/search`
 - Home search submit/clear controls restored to SVG sprite icons (CSS expects icon buttons)
 - Nav/footer home links use `/` instead of `/#`
