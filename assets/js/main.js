@@ -29,19 +29,15 @@
 							 	e.preventDefault();
 								$tabs.removeClass('active');
 								$this.addClass('active');
-								$media
-									.fadeOut('fast')
-									.each(function() {
-										var $this = $(this);
-										if ($this.hasClass(tag))
-											$this
-												.fadeOut('fast')
-												.delay(200)
-												.queue(function(next) {
-													$this.fadeIn();
-													next();
-												});
-									});
+								$media.stop(true, true).each(function() {
+									var $el = $(this);
+									var show = tag === 'all' || $el.hasClass(tag);
+									if (show) {
+										$el.fadeIn(120);
+									} else {
+										$el.fadeOut(100);
+									}
+								});
 						});
 					});
 			});
