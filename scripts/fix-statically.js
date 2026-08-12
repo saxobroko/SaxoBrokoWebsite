@@ -21,6 +21,21 @@ function walk(dir) {
 
 walk("src");
 files.push("assets/css/main.css");
+// Root shell HTML kept for sentiment/archive; keep image URLs in sync with templates.
+for (const name of [
+  "portfolio.html",
+  "oscar.html",
+  "index.html",
+  "eco.html",
+  "games.html",
+  "tools.html",
+  "search.html",
+  "privacy.html",
+  "terms.html",
+  "sponsors.html",
+]) {
+  if (fs.existsSync(name)) files.push(name);
+}
 
 let changed = 0;
 for (const file of files) {
