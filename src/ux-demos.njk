@@ -1,0 +1,140 @@
+---
+permalink: "/ux-demos.html"
+layout: "base.njk"
+title: "UX Demos"
+active: ""
+scripts: "lean"
+showFooter: false
+description: "Private playground — pick which polish paths to keep."
+headExtra: '<link rel="stylesheet" href="/assets/css/ux-demos.css" />'
+extraScripts: '<script defer src="/assets/js/ux-demos.js"></script>'
+---
+<section class="ux-lab">
+  <header class="ux-lab__intro">
+    <h1>UX demos</h1>
+    <p>Private playground — not linked from the nav. Try each path, then tell me which to keep (e.g. “A + C”).</p>
+  </header>
+
+  <div class="ux-lab__grid">
+    <!-- Path A -->
+    <article class="ux-demo" id="path-a" data-path="A">
+      <header class="ux-demo__meta">
+        <span class="ux-demo__badge">Path A</span>
+        <h2>Hero presence</h2>
+        <p>Staggered entrance + light pointer tilt on the banner block.</p>
+        <div class="ux-demo__controls">
+          <button type="button" class="ux-btn" data-action="replay-hero">Replay entrance</button>
+          <label class="ux-toggle">
+            <input type="checkbox" data-action="toggle-motion-a" />
+            Force reduced motion
+          </label>
+        </div>
+      </header>
+      <div class="ux-demo__stage ux-demo__stage--banner">
+        <div class="ux-hero" data-hero>
+          <div class="ux-hero__inner" data-hero-tilt>
+            <h3 class="ux-hero__title" data-hero-stagger>Saxo_Broko</h3>
+            <p class="ux-hero__line" data-hero-stagger>World renowned Unicorn Rider</p>
+            <div class="ux-hero__search" data-hero-stagger>
+              <span class="ux-hero__search-fake">Search for the things</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Path B -->
+    <article class="ux-demo" id="path-b" data-path="B">
+      <header class="ux-demo__meta">
+        <span class="ux-demo__badge">Path B</span>
+        <h2>Page feel</h2>
+        <p>Content fade-in + nav icon hover lift and focus rings.</p>
+        <div class="ux-demo__controls">
+          <button type="button" class="ux-btn" data-action="replay-pagefeel">Reload demo</button>
+        </div>
+      </header>
+      <div class="ux-demo__stage">
+        <div class="ux-pagefeel" data-pagefeel>
+          <nav class="ux-mini-nav" aria-label="Demo nav">
+            <a href="#path-b" class="ux-mini-nav__link" aria-label="Home demo">
+              <svg viewBox="0 0 576 512" aria-hidden="true"><path fill="currentColor" d="M280 148L96 300v164a16 16 0 0016 16h112a16 16 0 0016-16v-96a16 16 0 0116-16h64a16 16 0 0116 16v96a16 16 0 0016 16h112a16 16 0 0016-16V300L296 148a12 12 0 00-16 0zm292 103l-84-68V44a12 12 0 00-12-12h-56a12 12 0 00-12 12v73l-90-74a48 48 0 00-61 0L4 251a12 12 0 00-1 17l25 31a12 12 0 0017 2l235-194a12 12 0 0116 0l235 194a12 12 0 0017-2l25-31a12 12 0 00-1-17z"/></svg>
+            </a>
+            <a href="#path-b" class="ux-mini-nav__link" aria-label="Portfolio demo">
+              <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 32C22 32 0 54 0 80v352c0 27 22 48 48 48h416c27 0 48-21 48-48V80c0-26-21-48-48-48H48zm208 392a120 120 0 110-240 120 120 0 010 240z"/></svg>
+            </a>
+            <a href="#path-b" class="ux-mini-nav__link" aria-label="Games demo">
+              <svg viewBox="0 0 640 512" aria-hidden="true"><path fill="currentColor" d="M480 96H160a160 160 0 10114 272h92A160 160 0 10480 96z"/></svg>
+            </a>
+            <a href="#path-b" class="ux-mini-nav__link" aria-label="Tools demo">
+              <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M501 396L384 279a74 74 0 00-85-14L192 158V96L64 0 0 64l96 128h62l107 107c-14 27-10 62 14 85l117 117c14 15 38 15 52 0l53-53c15-14 15-38 0-52z"/></svg>
+            </a>
+          </nav>
+          <div class="ux-pagefeel__content" data-pagefeel-content>
+            <h3>Hover / tab the icons</h3>
+            <p>Content fades in when you hit Reload. Focus an icon with keyboard to see the ring.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Path C -->
+    <article class="ux-demo" id="path-c" data-path="C">
+      <header class="ux-demo__meta">
+        <span class="ux-demo__badge">Path C</span>
+        <h2>Gallery delight</h2>
+        <p>Thumb hover scale + snappier filter chips (no lightbox).</p>
+      </header>
+      <div class="ux-demo__stage">
+        <div class="ux-gallery" data-gallery>
+          <ul class="ux-gallery__tabs" role="tablist">
+            <li><button type="button" class="ux-chip is-active" data-tag="all" role="tab" aria-selected="true">All</button></li>
+            <li><button type="button" class="ux-chip" data-tag="photo" role="tab" aria-selected="false">Photo</button></li>
+            <li><button type="button" class="ux-chip" data-tag="art" role="tab" aria-selected="false">Art</button></li>
+          </ul>
+          <div class="ux-gallery__grid">
+            <a href="#path-c" class="ux-thumb media all photo" data-media>
+              <img src="/images/thumbs/02.jpg" alt="" width="150" height="150" loading="lazy" />
+            </a>
+            <a href="#path-c" class="ux-thumb media all art" data-media>
+              <img src="/images/thumbs/03.png" alt="" width="150" height="150" loading="lazy" />
+            </a>
+            <a href="#path-c" class="ux-thumb media all photo" data-media>
+              <img src="/images/thumbs/04.png" alt="" width="150" height="150" loading="lazy" />
+            </a>
+            <a href="#path-c" class="ux-thumb media all art" data-media>
+              <img src="/images/thumbs/05.png" alt="" width="150" height="150" loading="lazy" />
+            </a>
+            <a href="#path-c" class="ux-thumb media all photo" data-media>
+              <img src="/images/thumbs/07.png" alt="" width="150" height="150" loading="lazy" />
+            </a>
+            <a href="#path-c" class="ux-thumb media all art" data-media>
+              <img src="/images/thumbs/08.png" alt="" width="150" height="150" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Path D -->
+    <article class="ux-demo" id="path-d" data-path="D">
+      <header class="ux-demo__meta">
+        <span class="ux-demo__badge">Path D</span>
+        <h2>Character tagline</h2>
+        <p>Crossfading one-liners under the brand name.</p>
+        <div class="ux-demo__controls">
+          <button type="button" class="ux-btn" data-action="toggle-tagline-pause" aria-pressed="false">Pause</button>
+          <label class="ux-toggle">
+            <input type="checkbox" data-action="toggle-motion-d" />
+            Force reduced motion
+          </label>
+        </div>
+      </header>
+      <div class="ux-demo__stage ux-demo__stage--banner">
+        <div class="ux-tagline-demo">
+          <h3 class="ux-tagline-demo__brand">Saxo_Broko</h3>
+          <p class="ux-tagline-demo__line" data-tagline aria-live="polite">World renowned Unicorn Rider</p>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

@@ -12,6 +12,7 @@ All notable changes to this project are documented in this file.
 - `CLOUDFLARE.md` with Pages build settings (`npm run build` → `_site`, Node 20)
 - GitHub Actions workflow for alternate GitHub Pages hosting
 - Helper scripts under `scripts/` for migration, audits, and one-off fixes
+- Private `/ux-demos.html` lab with Path A–D polish demos (hero, page feel, gallery, tagline) — not linked from nav; pick winners before porting to the live site
 
 ### Changed
 
