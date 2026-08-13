@@ -15,6 +15,7 @@ All notable changes to this project are documented in this file.
 - Private `/ux-demos.html` lab with Path A–D polish demos (hero, page feel, gallery, tagline) — not linked from nav; pick winners before porting to the live site
 - Live UX polish from all four demo paths: home hero entrance + tilt, main fade-in + nav hover/focus, gallery thumb hover + snappier filters, rotating home taglines (`prefers-reduced-motion` respected); `/ux-demos.html` kept as a lab
 - Visual tune pass: progressive-enhancement so hero/main never stay invisible, stronger banner text shadow + search contrast, clearer nav active state, portfolio filter/heading contrast, gallery hover lift, tighter games button list, taller mobile home banner
+- Cool visual system (`cool.css`): Syne + Manrope, cinematic full-viewport home hero, ice accent nav, editorial portfolio grid, refined games/tools buttons and footer; removed temporary local proof banner/`look.html`
 
 ### Changed
 

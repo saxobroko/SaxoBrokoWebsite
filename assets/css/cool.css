@@ -1,0 +1,360 @@
+/* Saxo cool layer — cinematic, handmade, not generic AI purple */
+
+:root{
+  --sb-ink:#0b0d10;
+  --sb-fog:#e8eaed;
+  --sb-mute:#6b7280;
+  --sb-ice:#8fd3ff;
+  --sb-ice-dim:rgba(143,211,255,.18);
+  --sb-panel:#12151a;
+  --sb-line:rgba(255,255,255,.14);
+  --sb-ease:cubic-bezier(.22,1,.36,1);
+  --sb-display:"Syne",system-ui,sans-serif;
+  --sb-body:"Manrope",system-ui,sans-serif;
+}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+body,#main,p,li,a,button,input,.button,.copyright{
+  font-family:var(--sb-body);
+}
+
+h1,h2,h3,h4,#banner h1,#banner2 h1,.gallery header h1,.gamesinn header h1,.inner > header h1{
+  font-family:var(--sb-display);
+  letter-spacing:-.02em;
+}
+
+/* ---- Shell / nav ---- */
+#nav{
+  background:linear-gradient(180deg,#07080a 0%,#10131a 100%);
+  border-right:1px solid var(--sb-line);
+}
+#nav ul li a{
+  color:rgba(255,255,255,.78);
+  border-radius:10px;
+  transition:transform .2s var(--sb-ease),color .2s ease,background .2s ease,box-shadow .2s ease;
+}
+#nav ul li a:hover{
+  color:#fff;
+  transform:translateY(-2px) scale(1.05);
+  background:rgba(255,255,255,.07);
+}
+#nav ul li a.active{
+  color:var(--sb-ice);
+  background:var(--sb-ice-dim);
+  box-shadow:inset 0 0 0 1px rgba(143,211,255,.35);
+}
+#nav ul li a:focus-visible{
+  outline:2px solid var(--sb-ice);
+  outline-offset:3px;
+}
+
+/* ---- Page feel ---- */
+html.js-ux:not(.is-ready) #main{opacity:0;transform:translateY(8px)}
+html.js-ux.is-ready #main{opacity:1;transform:none;transition:opacity .45s var(--sb-ease),transform .45s var(--sb-ease)}
+#main{background:
+  radial-gradient(1200px 600px at 10% -10%,rgba(143,211,255,.07),transparent 55%),
+  #eceff3;
+}
+
+/* ---- Home hero ---- */
+#banner[data-hero]{
+  perspective:1000px;
+  position:relative;
+  isolation:isolate;
+  min-height:100vh;
+  height:auto;
+  padding:7em 1.5em 6em;
+  background-color:var(--sb-ink);
+}
+#banner[data-hero]::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(105deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.25) 42%,rgba(0,0,0,.55) 100%),
+    radial-gradient(ellipse at 50% 40%,transparent 20%,rgba(0,0,0,.55) 100%);
+}
+#banner[data-hero]::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:28%;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(to top,rgba(11,13,16,.9),transparent);
+}
+#banner[data-hero] > .inner{position:relative;z-index:1;max-width:44rem}
+#banner[data-hero] .inner{
+  transform-style:preserve-3d;
+  transition:transform .18s ease-out;
+  will-change:transform;
+}
+#banner[data-hero] h1{
+  font-size:clamp(2.8rem,8vw,5.2rem);
+  line-height:.95;
+  margin:0 0 .35em;
+  font-weight:800;
+  letter-spacing:-.03em;
+  color:#fff;
+  text-shadow:0 8px 40px rgba(0,0,0,.55);
+}
+#banner[data-hero] [data-tagline]{
+  display:inline-block;
+  margin:0 0 1.4em;
+  padding:0 0 .4em;
+  font-size:clamp(1.05rem,2.4vw,1.35rem);
+  font-weight:500;
+  letter-spacing:.04em;
+  text-transform:none;
+  color:rgba(255,255,255,.92);
+  border-bottom:1px solid rgba(143,211,255,.55);
+  min-height:1.5em;
+  transition:opacity .35s ease;
+}
+#banner[data-hero] [data-tagline].is-fading{opacity:0}
+
+html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger]{
+  opacity:0;
+  transform:translateY(18px);
+}
+#banner[data-hero].is-ready [data-hero-stagger]{animation:sb-hero-in .7s var(--sb-ease) forwards}
+#banner[data-hero].is-ready [data-hero-stagger]:nth-child(1){animation-delay:.06s}
+#banner[data-hero].is-ready [data-hero-stagger]:nth-child(2){animation-delay:.18s}
+#banner[data-hero].is-ready [data-hero-stagger]:nth-child(3){animation-delay:.3s}
+#banner[data-hero].is-reduced [data-hero-stagger]{opacity:1;transform:none;animation:none}
+@keyframes sb-hero-in{to{opacity:1;transform:translateY(0)}}
+
+#banner .search-wrap{max-width:28rem;margin:0 auto}
+#banner .sbx-custom2__input,
+#banner .searchbox input[type="search"]{
+  background:rgba(8,10,14,.7)!important;
+  color:#fff!important;
+  border:1px solid rgba(255,255,255,.28)!important;
+  box-shadow:0 16px 50px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+  border-radius:999px!important;
+  transition:border-color .2s ease,box-shadow .2s ease;
+}
+#banner .sbx-custom2__input:focus,
+#banner .searchbox input[type="search"]:focus{
+  border-color:rgba(143,211,255,.7)!important;
+  box-shadow:0 0 0 3px rgba(143,211,255,.2),0 16px 50px rgba(0,0,0,.45);
+  outline:none;
+}
+#banner .sbx-custom2__input::placeholder{color:rgba(255,255,255,.62)}
+#banner .sbx-custom2__submit,
+#banner .sbx-custom2__reset{color:#fff}
+
+/* ---- Content pages ---- */
+.gallery > header,
+.gallery header,
+.gamesinn > header,
+.inner > header{
+  align-items:flex-end;
+  gap:1rem;
+  margin-bottom:1.25rem;
+}
+.gallery header h1,
+.gamesinn header h1,
+.inner > header h1,
+#main .inner > header h1{
+  color:var(--sb-ink);
+  font-weight:800;
+  font-size:clamp(2rem,4vw,2.75rem);
+  margin:0;
+}
+.gallery header h3,
+.column header h3{
+  font-family:var(--sb-display);
+  font-weight:700;
+  letter-spacing:-.01em;
+  color:#1a1f27;
+}
+
+.gallery .tabs .button,
+ul.tabs .button{
+  background:transparent!important;
+  color:#1a1f27!important;
+  border:1px solid rgba(26,31,39,.22)!important;
+  border-radius:999px!important;
+  padding:.45em 1.1em!important;
+  font-weight:600;
+  letter-spacing:.02em;
+  box-shadow:none!important;
+  transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s var(--sb-ease);
+}
+.gallery .tabs .button:hover,
+ul.tabs .button:hover{
+  background:rgba(26,31,39,.06)!important;
+  transform:translateY(-1px);
+}
+.gallery .tabs .button.active,
+ul.tabs .button.active{
+  background:var(--sb-ink)!important;
+  color:#fff!important;
+  border-color:var(--sb-ink)!important;
+}
+
+/* ---- Portfolio grid ---- */
+.gallery{padding:2.5em 2.5em 3.5em}
+.gallery .content{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  overflow:visible;
+}
+.gallery .content .media{
+  width:calc(25% - 8px)!important;
+  margin:0!important;
+  border-radius:10px;
+  overflow:hidden;
+  border:0!important;
+  box-shadow:0 1px 0 rgba(0,0,0,.04),0 10px 28px rgba(15,23,42,.08);
+  opacity:1!important;
+  animation:none!important;
+  transition:transform .28s var(--sb-ease),box-shadow .28s var(--sb-ease);
+  background:#0b0d10;
+}
+.gallery .content .media a{display:block;cursor:zoom-in;line-height:0}
+.gallery .content .media img{
+  width:100%;
+  height:auto;
+  display:block;
+  transition:transform .45s var(--sb-ease),filter .3s ease;
+  filter:saturate(1.05) contrast(1.02);
+}
+.gallery .content .media:hover{
+  transform:translateY(-6px) scale(1.015);
+  box-shadow:0 18px 40px rgba(15,23,42,.22);
+  z-index:3;
+  border-color:transparent;
+}
+.gallery .content .media:hover img{
+  transform:scale(1.06);
+  filter:saturate(1.12) contrast(1.05);
+}
+
+@media screen and (max-width:980px){
+  .gallery .content .media{width:calc(33.333% - 8px)!important}
+}
+@media screen and (max-width:736px){
+  .gallery{padding:1.25em}
+  .gallery .content .media{width:calc(50% - 6px)!important}
+  .gallery .content{gap:8px}
+}
+
+/* ---- Games / tools ---- */
+.gamesinn,.inner.gamesinn{padding-bottom:2rem}
+.gamesinn .columns,
+.columns.double{
+  gap:1.5rem;
+}
+.gamesinn ol,
+.column ol{
+  list-style:none;
+  padding-left:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  counter-reset:sb-item;
+}
+.gamesinn ol li,
+.column ol li{
+  margin:0;
+  counter-increment:sb-item;
+}
+.gamesinn ol li::before,
+.column ol li::marker{content:none}
+.gamesinn br{display:none}
+
+.gamesinn .button,
+.column .button,
+.tools .button,
+#main .button{
+  min-width:0;
+  width:100%;
+  max-width:18rem;
+  text-align:left;
+  border-radius:12px!important;
+  border:1px solid rgba(26,31,39,.14)!important;
+  background:#fff!important;
+  color:var(--sb-ink)!important;
+  box-shadow:0 1px 0 rgba(0,0,0,.03),0 8px 20px rgba(15,23,42,.05);
+  font-weight:600;
+  padding:.7em 1em!important;
+  transition:transform .2s var(--sb-ease),box-shadow .2s ease,border-color .2s ease,background .2s ease;
+}
+.gamesinn .button:hover,
+.column .button:hover,
+#main .button:hover{
+  transform:translateY(-2px);
+  border-color:rgba(143,211,255,.8)!important;
+  box-shadow:0 12px 28px rgba(15,23,42,.12);
+  background:#f7fbff!important;
+}
+.gamesinn .button.w3-gray,
+.column .button.w3-gray{
+  background:var(--sb-ink)!important;
+  color:#fff!important;
+  border-color:var(--sb-ink)!important;
+}
+
+/* ---- Footer ---- */
+#footer{
+  padding:2rem 1.5rem 2.5rem;
+  background:transparent;
+}
+#footer .navbar{
+  background:var(--sb-ink);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(15,23,42,.12);
+}
+#footer .navbar a{
+  color:rgba(255,255,255,.82)!important;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+#footer .navbar a:hover,
+#footer .navbar a.active{
+  background:rgba(143,211,255,.16)!important;
+  color:#fff!important;
+}
+#footer .copyright{
+  color:var(--sb-mute);
+  line-height:1.6;
+  max-width:46rem;
+  margin:1rem auto 0;
+  font-size:.92rem;
+}
+
+/* Darkmode widget sit nicer */
+.darkmode-toggle{
+  box-shadow:0 10px 30px rgba(0,0,0,.25)!important;
+}
+
+@media (prefers-reduced-motion:reduce){
+  html.js-ux:not(.is-ready) #main,
+  html.js-ux.is-ready #main{opacity:1;transform:none;transition:none}
+  #nav ul li a,#nav ul li a:hover{transition:none;transform:none}
+  #banner[data-hero] .inner{transition:none!important;transform:none!important}
+  html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger],
+  #banner[data-hero].is-ready [data-hero-stagger]{opacity:1;transform:none;animation:none}
+  #banner [data-tagline]{transition:none}
+  .gallery .content .media,.gallery .content .media img,
+  .gamesinn .button,.column .button{transition:none}
+  .gallery .content .media:hover,.gallery .content .media:hover img,
+  .gamesinn .button:hover{transform:none;box-shadow:none}
+}
+
+@media screen and (max-width:736px){
+  #banner[data-hero]{min-height:calc(100vh - 3rem);padding:5.5em 1.25em 4em;box-sizing:border-box}
+  #footer .navbar a{padding:12px 3.5%}
+}

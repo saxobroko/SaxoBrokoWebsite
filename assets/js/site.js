@@ -56,9 +56,9 @@
 
     var lines = [
       "World renowned Unicorn Rider",
-      "Maker of odd corners of the web",
-      "Games, tools, and fish memorials",
-      "Still shipping static HTML in 2026",
+      "Digital mischief, handmade",
+      "Art, games, and weird ideas",
+      "Still shipping static HTML like it matters",
     ];
     var i = 0;
 
