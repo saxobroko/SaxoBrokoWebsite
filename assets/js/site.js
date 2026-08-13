@@ -97,7 +97,7 @@
         function () {
           input.focus();
         },
-        prefersReduced.matches ? 0 : 420
+        prefersReduced.matches ? 0 : 750
       );
     }
 

@@ -182,10 +182,10 @@ html[data-theme="dark"] .site-nav{
   background:transparent;
   overflow:hidden;
   transition:
-    background .55s ease,
-    border-color .55s ease,
-    box-shadow .55s ease,
-    padding .85s var(--sb-ease);
+    background .9s ease,
+    border-color .9s ease,
+    box-shadow .9s ease,
+    padding 1.45s var(--sb-ease);
 }
 .site-nav__search.is-open{
   background:var(--sb-panel);
@@ -210,9 +210,9 @@ html[data-theme="dark"] .site-nav{
   opacity:0;
   pointer-events:none;
   transition:
-    width .85s var(--sb-ease),
-    padding .85s var(--sb-ease),
-    opacity .45s ease .2s;
+    width 1.45s var(--sb-ease),
+    padding 1.45s var(--sb-ease),
+    opacity .7s ease .25s;
 }
 .site-nav__search.is-open .site-nav__search-input{
   width:14rem;
