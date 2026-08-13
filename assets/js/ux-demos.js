@@ -137,9 +137,9 @@
     var stage = qs(".ux-tagline-demo", panel);
     var lines = [
       "World renowned Unicorn Rider",
-      "Maker of odd corners of the web",
-      "Games, tools, and fish memorials",
-      "Still shipping static HTML in 2026",
+      "Official website of doom, or whatever",
+      "Games, tools, photos, and music",
+      "Making stuff since 2015",
     ];
     var i = 0;
     var paused = false;
