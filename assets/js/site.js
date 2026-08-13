@@ -54,11 +54,14 @@
     var line = document.querySelector("#banner [data-tagline]");
     if (!line) return;
 
+    // Taglines should sound like Saxo, not a startup pitch.
+    // Voice cues: dry, short, slightly unserious — “or whatever”, “Search for the things”,
+    // GitHub: “I don't even know what pro does.” Keep “World renowned Unicorn Rider”.
     var lines = [
       "World renowned Unicorn Rider",
-      "Digital mischief, handmade",
-      "Art, games, and weird ideas",
-      "Still shipping static HTML like it matters",
+      "Official website of doom, or whatever",
+      "Games, tools, photos, and music",
+      "Making stuff since 2015",
     ];
     var i = 0;
     var busy = false;
