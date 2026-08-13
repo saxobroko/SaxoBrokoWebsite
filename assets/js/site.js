@@ -82,7 +82,7 @@
     var submit = form.querySelector(".site-nav__search-submit");
     if (!panel || !input || !toggle || !submit) return;
 
-    var OPEN_MS = 1400;
+    var OPEN_MS = 420;
     var anim = null;
     var openTimer = null;
 
