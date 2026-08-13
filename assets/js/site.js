@@ -6,13 +6,7 @@
     yearEl.textContent = String(new Date().getFullYear());
   }
 
-  /* Path B — main fade-in */
-  document.documentElement.classList.add("js-ux");
-  requestAnimationFrame(function () {
-    document.documentElement.classList.add("is-ready");
-  });
-
-  /* Path A — home hero entrance + pointer tilt */
+  /* Path A — home hero entrance + pointer tilt (reveal before js-ux hide rules apply) */
   (function initHero() {
     var hero = document.querySelector("#banner[data-hero]");
     if (!hero) return;
@@ -48,6 +42,12 @@
       tilt.style.transform = "";
     });
   })();
+
+  /* Path B — main fade-in (class only; CSS keeps content visible without JS) */
+  document.documentElement.classList.add("js-ux");
+  requestAnimationFrame(function () {
+    document.documentElement.classList.add("is-ready");
+  });
 
   /* Path D — rotating home tagline */
   (function initTagline() {

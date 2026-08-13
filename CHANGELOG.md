@@ -14,6 +14,7 @@ All notable changes to this project are documented in this file.
 - Helper scripts under `scripts/` for migration, audits, and one-off fixes
 - Private `/ux-demos.html` lab with Path A–D polish demos (hero, page feel, gallery, tagline) — not linked from nav; pick winners before porting to the live site
 - Live UX polish from all four demo paths: home hero entrance + tilt, main fade-in + nav hover/focus, gallery thumb hover + snappier filters, rotating home taglines (`prefers-reduced-motion` respected); `/ux-demos.html` kept as a lab
+- Visual tune pass: progressive-enhancement so hero/main never stay invisible, stronger banner text shadow + search contrast, clearer nav active state, portfolio filter/heading contrast, gallery hover lift, tighter games button list, taller mobile home banner
 
 ### Changed
 
