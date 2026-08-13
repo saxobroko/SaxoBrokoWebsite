@@ -69,6 +69,6 @@
         line.textContent = lines[i];
         line.classList.remove("is-fading");
       }, 320);
-    }, 3200);
+    }, 2200);
   })();
 })();

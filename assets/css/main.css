@@ -55,7 +55,22 @@ html.js-ux.is-ready #main{opacity:1;transform:none;transition:opacity .4s ease,t
 #nav ul li a:focus-visible{outline:2px solid #fff;outline-offset:3px;color:#fff}
 
 /* Path A: hero — visible by default; animate only after ready */
-#banner[data-hero]{perspective:900px}
+#banner[data-hero]{
+  perspective:900px;
+  position:relative;
+  isolation:isolate;
+}
+#banner[data-hero]::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.25) 40%,rgba(0,0,0,.55) 100%),
+    radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.5) 100%);
+}
+#banner[data-hero] > .inner{position:relative;z-index:1}
 #banner[data-hero] .inner{
   transform-style:preserve-3d;
   transition:transform .15s ease-out;
@@ -63,8 +78,17 @@ html.js-ux.is-ready #main{opacity:1;transform:none;transition:opacity .4s ease,t
   text-shadow:0 2px 18px rgba(0,0,0,.65),0 0 2px rgba(0,0,0,.4);
 }
 #banner[data-hero] h1{
+  letter-spacing:.04em;
+  font-weight:800;
+  text-shadow:0 4px 28px rgba(0,0,0,.85),0 1px 2px rgba(0,0,0,.6);
+}
+#banner[data-hero] [data-tagline]{
+  font-size:1.35em;
+  font-weight:500;
   letter-spacing:.02em;
-  text-shadow:0 3px 24px rgba(0,0,0,.75),0 1px 2px rgba(0,0,0,.5);
+  border-bottom:2px solid rgba(255,255,255,.45);
+  display:inline-block;
+  padding-bottom:.15em;
 }
 html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger]{
   opacity:0;
@@ -80,36 +104,36 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
 @keyframes sb-hero-in{to{opacity:1;transform:translateY(0)}}
 
 /* Home search: readable on dark banner */
+#banner .search-wrap{max-width:460px}
 #banner .sbx-custom2__input,
 #banner .searchbox input[type="search"]{
-  background:rgba(20,20,20,.55)!important;
+  background:rgba(8,8,8,.72)!important;
   color:#fff!important;
-  border:1px solid rgba(255,255,255,.35)!important;
-  box-shadow:0 8px 28px rgba(0,0,0,.35);
-  backdrop-filter:blur(6px);
+  border:2px solid rgba(255,255,255,.55)!important;
+  box-shadow:0 10px 36px rgba(0,0,0,.5);
+  backdrop-filter:blur(8px);
+  border-radius:999px!important;
 }
-#banner .sbx-custom2__input::placeholder{color:rgba(255,255,255,.7)}
+#banner .sbx-custom2__input::placeholder{color:rgba(255,255,255,.75)}
 #banner .sbx-custom2__submit,
 #banner .sbx-custom2__reset{color:#fff}
 
 /* Path C: gallery breathing room + hover */
-.gallery .content{
-  gap:0;
-}
 .gallery .content .media{
   transition:transform .2s ease,box-shadow .2s ease,z-index 0s;
   box-sizing:border-box;
-  border:2px solid transparent;
+  border:3px solid #f0f0f0;
+  outline:1px solid rgba(0,0,0,.06);
 }
 .gallery .content .media a{display:block;cursor:zoom-in;line-height:0}
 .gallery .content .media:hover{
-  transform:translateY(-4px) scale(1.03);
-  box-shadow:0 12px 28px rgba(0,0,0,.4);
+  transform:translateY(-6px) scale(1.04);
+  box-shadow:0 16px 32px rgba(0,0,0,.45);
   z-index:2;
-  border-color:rgba(255,255,255,.55);
+  border-color:#3d6d99;
 }
 .gallery .content .media img{transition:transform .25s ease}
-.gallery .content .media:hover img{transform:scale(1.05)}
+.gallery .content .media:hover img{transform:scale(1.06)}
 
 /* Portfolio / gallery headers + filters */
 .gallery > header h1,
