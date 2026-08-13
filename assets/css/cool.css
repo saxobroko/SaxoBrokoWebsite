@@ -474,6 +474,15 @@ a:hover{color:var(--sb-ice-soft)}
   pointer-events:none;
   background:linear-gradient(to top,rgba(11,13,16,.72),transparent);
 }
+/* Light mode: inverted vignette — soft bright edges, slight centre shade for type */
+html[data-theme="light"] #banner[data-hero]::before{
+  background:
+    linear-gradient(105deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,.08) 45%,rgba(255,255,255,.28) 100%),
+    radial-gradient(ellipse at 50% 42%,rgba(0,0,0,.38) 0%,rgba(0,0,0,.12) 32%,transparent 70%);
+}
+html[data-theme="light"] #banner[data-hero]::after{
+  background:linear-gradient(to top,rgba(236,239,243,.88),transparent);
+}
 #banner[data-hero] > .inner{position:relative;z-index:2;max-width:44rem}
 #banner[data-hero] .inner{
   transform-style:preserve-3d;
