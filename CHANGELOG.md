@@ -16,6 +16,8 @@ All notable changes to this project are documented in this file.
 - Live UX polish from all four demo paths: home hero entrance + tilt, main fade-in + nav hover/focus, gallery thumb hover + snappier filters, rotating home taglines (`prefers-reduced-motion` respected); `/ux-demos.html` kept as a lab
 - Visual tune pass: progressive-enhancement so hero/main never stay invisible, stronger banner text shadow + search contrast, clearer nav active state, portfolio filter/heading contrast, gallery hover lift, tighter games button list, taller mobile home banner
 - Cool visual system (`cool.css`): Syne + Manrope, cinematic full-viewport home hero, ice accent nav, editorial portfolio grid, refined games/tools buttons and footer; removed temporary local proof banner/`look.html`
+- Replaced darkmode-js mix-blend inversion with a real `data-theme` system (CSS variables, FOUC-safe boot, accessible toggle, photo-safe gallery/banner, preference persistence + OS fallback)
+- Project rule: always update `CHANGELOG.md` and commit after completing a change (`.cursor/rules/commit-with-changelog.mdc`)
 
 ### Changed
 
@@ -24,6 +26,7 @@ All notable changes to this project are documented in this file.
 - Same-origin banner and eco backgrounds instead of third-party image CDN
 - Accessibility: `<main id="main">`, icon-nav `aria-label`s, contrast tweaks
 - Netlify and README updated for the Eleventy output directory
+- Sidebar no longer a hard black slab: fixed floating icon rail with a soft scrim; on home/eco it rides the photo edge with light icons
 
 ### Fixed
 

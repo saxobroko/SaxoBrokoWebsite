@@ -1,16 +1,39 @@
 /* Saxo cool layer — cinematic, handmade, not generic AI purple */
 
-:root{
+:root,
+html[data-theme="light"]{
   --sb-ink:#0b0d10;
   --sb-fog:#e8eaed;
+  --sb-page:#eceff3;
   --sb-mute:#6b7280;
-  --sb-ice:#8fd3ff;
-  --sb-ice-dim:rgba(143,211,255,.18);
-  --sb-panel:#12151a;
-  --sb-line:rgba(255,255,255,.14);
+  --sb-ice:#19b5fe;
+  --sb-ice-soft:#8fd3ff;
+  --sb-ice-dim:rgba(25,181,254,.16);
+  --sb-panel:#ffffff;
+  --sb-panel-border:rgba(26,31,39,.14);
+  --sb-heading:#0b0d10;
+  --sb-text:#1a1f27;
+  --sb-line:rgba(26,31,39,.1);
   --sb-ease:cubic-bezier(.22,1,.36,1);
   --sb-display:"Syne",system-ui,sans-serif;
   --sb-body:"Manrope",system-ui,sans-serif;
+  color-scheme:light;
+}
+
+html[data-theme="dark"]{
+  --sb-ink:#f3f5f7;
+  --sb-fog:#12151a;
+  --sb-page:#0c0e12;
+  --sb-mute:#9aa3b2;
+  --sb-ice:#5cc8ff;
+  --sb-ice-soft:#8fd3ff;
+  --sb-ice-dim:rgba(92,200,255,.18);
+  --sb-panel:#171b22;
+  --sb-panel-border:rgba(255,255,255,.1);
+  --sb-heading:#f5f7fa;
+  --sb-text:#d5dae3;
+  --sb-line:rgba(255,255,255,.1);
+  color-scheme:dark;
 }
 
 html{scroll-behavior:smooth}
@@ -27,40 +50,164 @@ h1,h2,h3,h4,#banner h1,#banner2 h1,.gallery header h1,.gamesinn header h1,.inner
   letter-spacing:-.02em;
 }
 
-/* ---- Shell / nav ---- */
+/* ---- Theme toggle ---- */
+.theme-toggle{
+  position:fixed;
+  right:1.25rem;
+  bottom:1.25rem;
+  z-index:40;
+  width:2.75rem;
+  height:2.75rem;
+  border:1px solid var(--sb-panel-border);
+  border-radius:999px;
+  background:var(--sb-panel);
+  color:var(--sb-heading);
+  box-shadow:0 10px 28px rgba(0,0,0,.18);
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .2s var(--sb-ease),background .2s ease,border-color .2s ease,color .2s ease;
+}
+.theme-toggle:hover{transform:translateY(-2px);border-color:var(--sb-ice)}
+.theme-toggle:focus-visible{outline:2px solid var(--sb-ice);outline-offset:3px}
+.theme-toggle__sun,.theme-toggle__moon{display:inline-flex;line-height:0}
+.theme-toggle__sun{display:none}
+html[data-theme="dark"] .theme-toggle__moon{display:none}
+html[data-theme="dark"] .theme-toggle__sun{display:inline-flex}
+@media (prefers-reduced-motion:reduce){
+  .theme-toggle{transition:none}
+  .theme-toggle:hover{transform:none}
+}
+/* Hide legacy darkmode-js widget if an old cache still injects it */
+.darkmode-toggle,.darkmode-layer,.darkmode-background{display:none!important}
+
+/* ---- Shell / nav — floats over content (no reserved dark slab) ---- */
+.page-wrap{
+  display:block!important;
+}
 #nav{
-  background:transparent;
+  position:fixed!important;
+  left:0;
+  top:0;
+  bottom:0;
+  z-index:50;
+  width:3.25rem;
+  background:linear-gradient(90deg,rgba(236,239,243,.9),rgba(236,239,243,.35) 55%,transparent)!important;
   border-right:0;
+  pointer-events:none;
+}
+html[data-theme="dark"] #nav{
+  background:linear-gradient(90deg,rgba(12,14,18,.92),rgba(12,14,18,.35) 55%,transparent)!important;
+}
+#nav ul{
+  pointer-events:auto;
+  position:fixed;
+  top:1rem;
+  left:0;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+#nav ul li{
+  width:3.1rem;
+  margin:0 0 .55rem;
+  padding:0;
+  text-align:center;
 }
 #nav ul li a{
-  color:rgba(255,255,255,.55);
+  color:var(--sb-mute);
   border-radius:0;
-  background:transparent;
-  box-shadow:none;
-  transition:color .2s ease,transform .2s var(--sb-ease);
+  background:transparent!important;
+  box-shadow:none!important;
+  text-decoration:none;
+  transition:color .2s ease,opacity .2s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:2.4rem;
+  height:2.4rem;
 }
-#nav ul li a:hover{
-  color:#fff;
+#nav ul li a:hover,
+#nav ul li a:focus{
+  color:var(--sb-heading);
+  background:transparent!important;
   transform:none;
-  background:transparent;
 }
 #nav ul li a.active{
-  color:#19b5fe;
-  background:transparent;
-  box-shadow:none;
+  color:var(--sb-ice)!important;
+  background:transparent!important;
+  box-shadow:none!important;
 }
 #nav ul li a:focus-visible{
-  outline:2px solid #19b5fe;
-  outline-offset:4px;
-  border-radius:4px;
+  outline:2px solid var(--sb-ice);
+  outline-offset:3px;
+  border-radius:6px;
+}
+#nav ul li a .icon svg{
+  width:1.2em;
+  height:1.2em;
+}
+#main{
+  width:100%!important;
+  box-sizing:border-box;
+  padding-left:3.25rem;
+}
+
+/* Home / eco: icons ride the photo; soft scrim only */
+body.page-home #nav,
+body.page-eco #nav{
+  background:linear-gradient(90deg,rgba(0,0,0,.42),transparent 85%)!important;
+}
+body.page-home #main,
+body.page-eco #main{
+  padding-left:0;
+}
+body.page-home #nav ul li a,
+body.page-eco #nav ul li a{
+  color:rgba(255,255,255,.7);
+  filter:drop-shadow(0 1px 4px rgba(0,0,0,.65));
+}
+body.page-home #nav ul li a:hover,
+body.page-home #nav ul li a:focus,
+body.page-eco #nav ul li a:hover,
+body.page-eco #nav ul li a:focus{
+  color:#fff;
+}
+body.page-home #nav ul li a.active,
+body.page-eco #nav ul li a.active{
+  color:var(--sb-ice-soft)!important;
+}
+
+@media screen and (max-width:736px){
+  #nav{width:2.85rem}
+  #main{padding-left:2.85rem}
+  body.page-home #main,
+  body.page-eco #main{padding-left:0}
+  #nav ul li{width:2.7rem;margin-bottom:.4rem}
+  #nav ul li a{width:2.2rem;height:2.2rem}
 }
 
 /* ---- Page feel ---- */
 html.js-ux:not(.is-ready) #main{opacity:0;transform:translateY(8px)}
 html.js-ux.is-ready #main{opacity:1;transform:none;transition:opacity .45s var(--sb-ease),transform .45s var(--sb-ease)}
-#main{background:
-  radial-gradient(1200px 600px at 10% -10%,rgba(143,211,255,.07),transparent 55%),
-  #eceff3;
+#main{
+  background:
+    radial-gradient(1200px 600px at 10% -10%,var(--sb-ice-dim),transparent 55%),
+    var(--sb-page)!important;
+  color:var(--sb-text);
+  transition:background .25s ease,color .25s ease;
+}
+body{
+  background:var(--sb-page)!important;
+  color:var(--sb-text)!important;
+}
+a{color:var(--sb-ice)}
+a:hover{color:var(--sb-ice-soft)}
+.box{
+  background:var(--sb-panel);
+  border-color:var(--sb-panel-border);
+  color:var(--sb-text);
 }
 
 /* ---- Home hero ---- */
@@ -167,7 +314,7 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
 .gamesinn header h1,
 .inner > header h1,
 #main .inner > header h1{
-  color:var(--sb-ink);
+  color:var(--sb-heading);
   font-weight:800;
   font-size:clamp(2rem,4vw,2.75rem);
   margin:0;
@@ -177,7 +324,7 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
   font-family:var(--sb-display);
   font-weight:700;
   letter-spacing:-.01em;
-  color:#1a1f27;
+  color:var(--sb-heading);
 }
 
 /* Portfolio filters — quiet text chips, not a white slab */
@@ -215,7 +362,7 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
   margin:0;
   padding:.4em .85em!important;
   background:transparent!important;
-  color:rgba(26,31,39,.55)!important;
+  color:var(--sb-mute)!important;
   border:0!important;
   border-radius:0!important;
   box-shadow:none!important;
@@ -230,27 +377,16 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
 .gallery .tabs .button:hover,
 #main .gallery .tabs .button:hover{
   background:transparent!important;
-  color:var(--sb-ink)!important;
+  color:var(--sb-heading)!important;
   transform:none;
   box-shadow:none!important;
 }
 .gallery .tabs .button.active,
 #main .gallery .tabs .button.active{
   background:transparent!important;
-  color:var(--sb-ink)!important;
+  color:var(--sb-heading)!important;
   border:0!important;
   box-shadow:inset 0 -2px 0 var(--sb-ice)!important;
-}
-
-.darkmode--activated .gallery .tabs .button,
-.darkmode--activated #main .gallery .tabs .button{
-  color:rgba(255,255,255,.5)!important;
-}
-.darkmode--activated .gallery .tabs .button:hover,
-.darkmode--activated .gallery .tabs .button.active,
-.darkmode--activated #main .gallery .tabs .button:hover,
-.darkmode--activated #main .gallery .tabs .button.active{
-  color:#fff!important;
 }
 
 /* ---- Portfolio grid ---- */
@@ -272,6 +408,9 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
   animation:none!important;
   transition:transform .28s var(--sb-ease),box-shadow .28s var(--sb-ease);
   background:#0b0d10;
+}
+html[data-theme="dark"] .gallery .content .media{
+  box-shadow:0 1px 0 rgba(255,255,255,.04),0 12px 30px rgba(0,0,0,.35);
 }
 .gallery .content .media a{display:block;cursor:zoom-in;line-height:0}
 .gallery .content .media img{
@@ -336,9 +475,9 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
   max-width:18rem;
   text-align:left;
   border-radius:12px!important;
-  border:1px solid rgba(26,31,39,.14)!important;
-  background:#fff!important;
-  color:var(--sb-ink)!important;
+  border:1px solid var(--sb-panel-border)!important;
+  background:var(--sb-panel)!important;
+  color:var(--sb-heading)!important;
   box-shadow:0 1px 0 rgba(0,0,0,.03),0 8px 20px rgba(15,23,42,.05);
   font-weight:600;
   padding:.7em 1em!important;
@@ -349,24 +488,24 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
 #main .column .button:hover,
 #main .gamesinn .button:hover{
   transform:translateY(-2px);
-  border-color:rgba(143,211,255,.8)!important;
+  border-color:var(--sb-ice)!important;
   box-shadow:0 12px 28px rgba(15,23,42,.12);
-  background:#f7fbff!important;
+  background:var(--sb-panel)!important;
 }
 .gamesinn .button.w3-gray,
 .column .button.w3-gray,
 #main .column .button.w3-gray{
-  background:var(--sb-ink)!important;
-  color:#fff!important;
-  border-color:var(--sb-ink)!important;
+  background:var(--sb-heading)!important;
+  color:var(--sb-page)!important;
+  border-color:var(--sb-heading)!important;
 }
 
 /* ---- Footer — quiet, no pill bar ---- */
 #footer{
   padding:2.75rem 1.75rem 3.25rem;
   margin-top:1rem;
-  background:transparent;
-  border-top:1px solid rgba(26,31,39,.1);
+  background:var(--sb-page)!important;
+  border-top:1px solid var(--sb-line);
 }
 #footer .navbar{display:none} /* legacy class unused */
 #footer .footer-links{
@@ -386,7 +525,7 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
   float:none;
   display:inline-block;
   padding:.35rem .7rem;
-  color:rgba(26,31,39,.55)!important;
+  color:var(--sb-mute)!important;
   background:transparent!important;
   font-size:.85rem;
   font-weight:600;
@@ -398,12 +537,12 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
 }
 #footer .footer-links a:hover,
 #footer .footer-links a.active{
-  color:var(--sb-ink)!important;
+  color:var(--sb-heading)!important;
   background:transparent!important;
   box-shadow:inset 0 -2px 0 var(--sb-ice);
 }
 #footer .copyright{
-  color:var(--sb-mute);
+  color:var(--sb-mute)!important;
   line-height:1.65;
   max-width:38rem;
   margin:0 auto;
@@ -413,7 +552,7 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
 }
 #footer .copyright--year{
   margin-bottom:.65rem;
-  color:rgba(26,31,39,.7);
+  color:var(--sb-text);
   font-weight:600;
   letter-spacing:.02em;
 }
@@ -422,25 +561,11 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
   opacity:.9;
 }
 
-/* Keep darkmode widget off the acknowledgment text */
-.darkmode-toggle{
-  box-shadow:0 10px 30px rgba(0,0,0,.25)!important;
-  bottom:28px!important;
-  right:28px!important;
-}
-.darkmode--activated #footer{
-  border-top-color:rgba(255,255,255,.12);
-}
-.darkmode--activated #footer .footer-links a{
-  color:rgba(255,255,255,.55)!important;
-}
-.darkmode--activated #footer .footer-links a:hover,
-.darkmode--activated #footer .footer-links a.active{
-  color:#fff!important;
-}
-.darkmode--activated #footer .copyright,
-.darkmode--activated #footer .copyright--year{
-  color:rgba(255,255,255,.55);
+/* Banner stays photographic in both themes */
+#banner,#banner2,#banner img,#banner2 img,
+.gallery .content .media img,
+.gallery .content .media picture{
+  color-scheme:only light;
 }
 
 @media (prefers-reduced-motion:reduce){

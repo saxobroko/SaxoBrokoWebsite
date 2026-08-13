@@ -1,0 +1,23 @@
+---
+description: Always update CHANGELOG and create a git commit after completing a change
+alwaysApply: true
+---
+
+# Commit with changelog after every change
+
+After finishing a meaningful change in this repo (feature, fix, polish, refactor, docs that ship with code):
+
+1. **Update `CHANGELOG.md`** under the current version section before committing.
+   - Prefer `### Added` / `### Changed` / `### Fixed` bullets.
+   - Write user-facing “why”, not a file dump.
+2. **Commit** the change set (including the changelog) in the same turn.
+   - Do not wait for the user to ask — this project opts in to automatic commits after work.
+   - Follow the repo git safety rules (no force push, no amend unless allowed, no secrets).
+   - Use a concise commit message that matches recent style (`fix:`, `style:`, `feat:`, etc.).
+3. **Skip empty commits** if nothing landed. Skip changelog only for pure chore noise (e.g. deleting a local screenshot you never tracked).
+
+Example changelog line:
+
+```md
+- Replaced darkmode-js mix-blend inversion with a `data-theme` CSS-variable system
+```
