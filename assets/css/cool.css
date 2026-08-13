@@ -418,9 +418,19 @@ a:hover{color:var(--sb-ice-soft)}
   perspective:1000px;
   position:relative;
   isolation:isolate;
+  box-sizing:border-box;
+  /* 100vh overshoots browser chrome / Windows taskbar; svh fits the visible frame */
   min-height:100vh;
-  height:auto;
-  padding:7em 1.5em 6em;
+  min-height:100svh;
+  min-height:100dvh;
+  height:100vh;
+  height:100svh;
+  height:100dvh;
+  max-height:100vh;
+  max-height:100svh;
+  max-height:100dvh;
+  padding:7em 1.5em max(6em, calc(3em + env(safe-area-inset-bottom, 0px)));
+  overflow:hidden;
   background-color:#0b0d10;
   /* tiny placeholder while the sharp <picture> arrives */
   background-image:url(/images/bannerlow.webp)!important;
@@ -819,6 +829,14 @@ html[data-theme="dark"] .gallery .content .media{
 }
 
 @media screen and (max-width:736px){
-  #banner[data-hero]{min-height:calc(100vh - 3rem);padding:5.5em 1.25em 4em;box-sizing:border-box}
+  #banner[data-hero]{
+    min-height:100svh;
+    min-height:100dvh;
+    height:100svh;
+    height:100dvh;
+    max-height:100svh;
+    max-height:100dvh;
+    padding:5.5em 1.25em max(4em, calc(2.5em + env(safe-area-inset-bottom, 0px)));
+  }
   #footer .footer-links a{padding:.4rem .55rem;font-size:.78rem}
 }

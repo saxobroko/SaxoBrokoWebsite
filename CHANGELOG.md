@@ -42,6 +42,7 @@ All notable changes to this project are documented in this file.
 
 ### Fixed
 
+- Home hero no longer overshoots into browser chrome / Windows taskbar (`100dvh`/`100svh` + safe-area padding instead of bare `100vh`)
 - Statically CDN image URLs returning 403 on portfolio, oscar, and eco CSS backgrounds
 - Root archive `portfolio.html` / `oscar.html` lightbox and thumb links rewritten off discontinued Statically endpoints (Eleventy `src/` templates already used `/images/...`)
 - Portfolio Magnific Popup restored so gallery images open in a lightbox again (`delegate: 'a'` on `.content`, matching pre-migration behavior)
