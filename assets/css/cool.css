@@ -177,28 +177,77 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
   color:#1a1f27;
 }
 
+/* Portfolio filters — quiet text chips, not a white slab */
+.gallery ul.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem .15rem;
+  align-items:center;
+  margin:0;
+  padding:0;
+  list-style:none;
+  background:none;
+  border:0;
+  box-shadow:none;
+}
+.gallery ul.tabs li{
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+  background:none;
+}
+.gallery ul.tabs li + li::before{
+  content:none;
+}
 .gallery .tabs .button,
-ul.tabs .button{
+.gallery ul.tabs .button,
+#main .gallery .tabs .button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:auto!important;
+  max-width:none!important;
+  min-width:0!important;
+  margin:0;
+  padding:.4em .85em!important;
   background:transparent!important;
-  color:#1a1f27!important;
-  border:1px solid rgba(26,31,39,.22)!important;
-  border-radius:999px!important;
-  padding:.45em 1.1em!important;
-  font-weight:600;
-  letter-spacing:.02em;
+  color:rgba(26,31,39,.55)!important;
+  border:0!important;
+  border-radius:0!important;
   box-shadow:none!important;
-  transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s var(--sb-ease);
+  font-family:var(--sb-body)!important;
+  font-weight:600;
+  font-size:.92rem;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  line-height:1.2;
+  transition:color .2s ease,box-shadow .2s ease;
 }
 .gallery .tabs .button:hover,
-ul.tabs .button:hover{
-  background:rgba(26,31,39,.06)!important;
-  transform:translateY(-1px);
+#main .gallery .tabs .button:hover{
+  background:transparent!important;
+  color:var(--sb-ink)!important;
+  transform:none;
+  box-shadow:none!important;
 }
 .gallery .tabs .button.active,
-ul.tabs .button.active{
-  background:var(--sb-ink)!important;
+#main .gallery .tabs .button.active{
+  background:transparent!important;
+  color:var(--sb-ink)!important;
+  border:0!important;
+  box-shadow:inset 0 -2px 0 var(--sb-ice)!important;
+}
+
+.darkmode--activated .gallery .tabs .button,
+.darkmode--activated #main .gallery .tabs .button{
+  color:rgba(255,255,255,.5)!important;
+}
+.darkmode--activated .gallery .tabs .button:hover,
+.darkmode--activated .gallery .tabs .button.active,
+.darkmode--activated #main .gallery .tabs .button:hover,
+.darkmode--activated #main .gallery .tabs .button.active{
   color:#fff!important;
-  border-color:var(--sb-ink)!important;
 }
 
 /* ---- Portfolio grid ---- */
@@ -277,7 +326,8 @@ ul.tabs .button.active{
 .gamesinn .button,
 .column .button,
 .tools .button,
-#main .button{
+#main .column .button,
+#main .gamesinn .button{
   min-width:0;
   width:100%;
   max-width:18rem;
@@ -293,14 +343,16 @@ ul.tabs .button.active{
 }
 .gamesinn .button:hover,
 .column .button:hover,
-#main .button:hover{
+#main .column .button:hover,
+#main .gamesinn .button:hover{
   transform:translateY(-2px);
   border-color:rgba(143,211,255,.8)!important;
   box-shadow:0 12px 28px rgba(15,23,42,.12);
   background:#f7fbff!important;
 }
 .gamesinn .button.w3-gray,
-.column .button.w3-gray{
+.column .button.w3-gray,
+#main .column .button.w3-gray{
   background:var(--sb-ink)!important;
   color:#fff!important;
   border-color:var(--sb-ink)!important;
