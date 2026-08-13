@@ -29,27 +29,30 @@ h1,h2,h3,h4,#banner h1,#banner2 h1,.gallery header h1,.gamesinn header h1,.inner
 
 /* ---- Shell / nav ---- */
 #nav{
-  background:linear-gradient(180deg,#07080a 0%,#10131a 100%);
-  border-right:1px solid var(--sb-line);
+  background:transparent;
+  border-right:0;
 }
 #nav ul li a{
-  color:rgba(255,255,255,.78);
-  border-radius:10px;
-  transition:transform .2s var(--sb-ease),color .2s ease,background .2s ease,box-shadow .2s ease;
+  color:rgba(255,255,255,.55);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  transition:color .2s ease,transform .2s var(--sb-ease);
 }
 #nav ul li a:hover{
   color:#fff;
-  transform:translateY(-2px) scale(1.05);
-  background:rgba(255,255,255,.07);
+  transform:none;
+  background:transparent;
 }
 #nav ul li a.active{
-  color:var(--sb-ice);
-  background:var(--sb-ice-dim);
-  box-shadow:inset 0 0 0 1px rgba(143,211,255,.35);
+  color:#19b5fe;
+  background:transparent;
+  box-shadow:none;
 }
 #nav ul li a:focus-visible{
-  outline:2px solid var(--sb-ice);
-  outline-offset:3px;
+  outline:2px solid #19b5fe;
+  outline-offset:4px;
+  border-radius:4px;
 }
 
 /* ---- Page feel ---- */
