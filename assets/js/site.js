@@ -60,7 +60,7 @@
     var lines = [
       "World renowned Unicorn Rider",
       "Official website of doom, or whatever",
-      "Games, tools, photos, and music",
+      "Games, tools, n whatnot",
       "Making stuff since 2015",
     ];
     var i = 0;
