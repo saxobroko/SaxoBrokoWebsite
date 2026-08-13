@@ -120,10 +120,12 @@ html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger
 
 /* Path C: gallery breathing room + hover */
 .gallery .content .media{
-  transition:transform .2s ease,box-shadow .2s ease,z-index 0s;
+  transition:transform .2s ease,box-shadow .2s ease;
   box-sizing:border-box;
-  border:3px solid #f0f0f0;
-  outline:1px solid rgba(0,0,0,.06);
+  border:3px solid #fff;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+  opacity:1 !important; /* don't stay stuck mid gallery keyframe */
+  animation:none !important;
 }
 .gallery .content .media a{display:block;cursor:zoom-in;line-height:0}
 .gallery .content .media:hover{
