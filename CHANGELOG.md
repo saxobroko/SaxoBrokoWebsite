@@ -30,6 +30,7 @@ All notable changes to this project are documented in this file.
 - Replaced the icon sidebar with an editorial top nav (wordmark + text links); theme toggle sits in the nav; secondary links live in the footer
 - Nav search icon expands into an animated inline field (Escape / empty outside-click closes; submits to `/search`)
 - Slowed nav search open animation (~1.45s) and switched off non-interpolating `width: min()` so the expand is actually visible
+- Nav search expand now uses the Web Animations API (~1.4s) so it still plays when Windows “reduce motion” disables CSS transitions
 
 ### Fixed
 

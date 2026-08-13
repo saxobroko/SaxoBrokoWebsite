@@ -72,45 +72,119 @@
     }, 2200);
   })();
 
-  /* Expandable nav search */
+  /* Expandable nav search — WAAPI so it still animates when OS “reduce motion” kills CSS transitions */
   (function initNavSearch() {
     var form = document.querySelector("[data-nav-search]");
     if (!form) return;
+    var panel = form.querySelector("[data-nav-search-panel]");
     var input = form.querySelector(".site-nav__search-input");
     var toggle = form.querySelector("[data-nav-search-toggle]");
-    if (!input || !toggle) return;
+    var submit = form.querySelector(".site-nav__search-submit");
+    if (!panel || !input || !toggle || !submit) return;
 
-    if (prefersReduced.matches) {
-      form.style.transition = "none";
-      input.style.transition = "none";
+    var OPEN_MS = 1400;
+    var anim = null;
+    var openTimer = null;
+
+    function panelWidthPx() {
+      var rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+      return Math.min(14 * rem, window.innerWidth * 0.56);
     }
 
-    // Delay focus until the expand has mostly played so the caret doesn’t fight the motion
-    var openTimer = null;
+    function stopAnim() {
+      if (anim) {
+        try {
+          anim.cancel();
+        } catch (e) {}
+        anim = null;
+      }
+    }
+
+    function setOpenUi(isOpen) {
+      form.classList.toggle("is-open", isOpen);
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      toggle.setAttribute("aria-label", isOpen ? "Close search" : "Open search");
+      submit.hidden = !isOpen;
+      if (isOpen) input.removeAttribute("tabindex");
+      else input.setAttribute("tabindex", "-1");
+    }
+
     function open() {
-      form.classList.add("is-open");
-      toggle.setAttribute("aria-expanded", "true");
-      toggle.setAttribute("aria-label", "Close search");
-      input.removeAttribute("tabindex");
+      if (form.classList.contains("is-open") && panel.getBoundingClientRect().width > 8) {
+        input.focus();
+        return;
+      }
       window.clearTimeout(openTimer);
-      openTimer = window.setTimeout(
-        function () {
+      stopAnim();
+      setOpenUi(true);
+      var end = panelWidthPx() + "px";
+      panel.style.maxWidth = "0px";
+      panel.style.width = "auto";
+      panel.style.opacity = "0";
+      if (typeof panel.animate === "function") {
+        anim = panel.animate(
+          [
+            { maxWidth: "0px", opacity: 0 },
+            { maxWidth: end, opacity: 1 },
+          ],
+          {
+            duration: OPEN_MS,
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            fill: "forwards",
+          }
+        );
+        anim.onfinish = function () {
+          panel.style.maxWidth = end;
+          panel.style.opacity = "1";
+          anim = null;
           input.focus();
-        },
-        prefersReduced.matches ? 0 : 750
-      );
+        };
+      } else {
+        panel.style.transition = "max-width " + OPEN_MS + "ms cubic-bezier(0.22,1,0.36,1), opacity .6s ease";
+        requestAnimationFrame(function () {
+          panel.style.maxWidth = end;
+          panel.style.opacity = "1";
+        });
+        openTimer = window.setTimeout(function () {
+          input.focus();
+        }, OPEN_MS);
+      }
     }
 
     function close() {
       window.clearTimeout(openTimer);
-      form.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open search");
-      input.setAttribute("tabindex", "-1");
-      input.blur();
+      stopAnim();
+      var start = panel.getBoundingClientRect().width + "px";
+      if (typeof panel.animate === "function") {
+        anim = panel.animate(
+          [
+            { maxWidth: start, opacity: 1 },
+            { maxWidth: "0px", opacity: 0 },
+          ],
+          {
+            duration: Math.round(OPEN_MS * 0.75),
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            fill: "forwards",
+          }
+        );
+        anim.onfinish = function () {
+          panel.style.maxWidth = "0px";
+          panel.style.opacity = "0";
+          anim = null;
+          setOpenUi(false);
+          input.blur();
+        };
+      } else {
+        panel.style.maxWidth = "0px";
+        panel.style.opacity = "0";
+        setOpenUi(false);
+        input.blur();
+      }
     }
 
-    toggle.addEventListener("click", function () {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       if (form.classList.contains("is-open")) close();
       else open();
     });

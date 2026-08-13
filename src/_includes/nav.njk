@@ -10,16 +10,18 @@
   </nav>
   <div class="site-nav__end">
     <form class="site-nav__search" action="/search" method="get" role="search" data-nav-search>
-      <label class="sr-only" for="nav-search-q">Search the site</label>
-      <input
-        id="nav-search-q"
-        class="site-nav__search-input"
-        type="search"
-        name="q"
-        placeholder="Search…"
-        autocomplete="off"
-        tabindex="-1"
-      />
+      <div class="site-nav__search-panel" data-nav-search-panel>
+        <label class="sr-only" for="nav-search-q">Search the site</label>
+        <input
+          id="nav-search-q"
+          class="site-nav__search-input"
+          type="search"
+          name="q"
+          placeholder="Search…"
+          autocomplete="off"
+          tabindex="-1"
+        />
+      </div>
       <button
         type="button"
         class="site-nav__search-toggle"
@@ -33,7 +35,7 @@
           <path d="M20 20l-3.5-3.5"/>
         </svg>
       </button>
-      <button type="submit" class="site-nav__search-submit" aria-label="Submit search">
+      <button type="submit" class="site-nav__search-submit" aria-label="Submit search" hidden>
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <circle cx="11" cy="11" r="7"/>
           <path d="M20 20l-3.5-3.5"/>
