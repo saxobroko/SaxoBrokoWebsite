@@ -80,17 +80,29 @@
     var toggle = form.querySelector("[data-nav-search-toggle]");
     if (!input || !toggle) return;
 
+    if (prefersReduced.matches) {
+      form.style.transition = "none";
+      input.style.transition = "none";
+    }
+
+    // Delay focus until the expand has mostly played so the caret doesn’t fight the motion
+    var openTimer = null;
     function open() {
       form.classList.add("is-open");
       toggle.setAttribute("aria-expanded", "true");
       toggle.setAttribute("aria-label", "Close search");
       input.removeAttribute("tabindex");
-      window.requestAnimationFrame(function () {
-        input.focus();
-      });
+      window.clearTimeout(openTimer);
+      openTimer = window.setTimeout(
+        function () {
+          input.focus();
+        },
+        prefersReduced.matches ? 0 : 420
+      );
     }
 
     function close() {
+      window.clearTimeout(openTimer);
       form.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "Open search");
@@ -127,11 +139,6 @@
       if (form.contains(e.target)) return;
       if (!String(input.value || "").trim()) close();
     });
-
-    if (prefersReduced.matches) {
-      form.style.transition = "none";
-      input.style.transition = "none";
-    }
 
     try {
       var params = new URLSearchParams(window.location.search);
