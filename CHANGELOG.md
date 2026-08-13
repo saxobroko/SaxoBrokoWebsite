@@ -35,6 +35,7 @@ All notable changes to this project are documented in this file.
 - Replaced cringy AI taglines with Saxo-voice lines (kept Unicorn Rider; added doom/or whatever, games-tools-n-whatnot, since 2015); added `.cursor/rules/site-voice.mdc`
 - Sharper home hero from the 1600px source via responsive AVIF/WebP + tiny LQIP placeholder and preload `imagesrcset` so it still feels instant
 - Hero quality pass: higher-bitrate encodes, 2400w retina size, lighter vignette so mist/trees aren’t crushed
+- Rebuilt home hero from Immich master `A:\Pictures\2020\2020-10-24\banner.jpg` (4466×3350) into responsive AVIF/WebP up to 3200w
 
 ### Fixed
 

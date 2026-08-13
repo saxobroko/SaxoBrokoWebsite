@@ -411,7 +411,8 @@ a:hover{color:var(--sb-ice-soft)}
   height:100%;
   object-fit:cover;
   object-position:center;
-  filter:contrast(1.06) brightness(1.04);
+  /* keep natural color from the Immich master; light punch only */
+  filter:contrast(1.04) saturate(1.05);
 }
 #banner[data-hero]::before{
   content:"";
