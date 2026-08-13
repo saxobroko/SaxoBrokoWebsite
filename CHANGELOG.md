@@ -27,6 +27,7 @@ All notable changes to this project are documented in this file.
 - Accessibility: `<main id="main">`, icon-nav `aria-label`s, contrast tweaks
 - Netlify and README updated for the Eleventy output directory
 - Sidebar no longer a hard black slab: fixed floating icon rail with a soft scrim; on home/eco it rides the photo edge with light icons
+- Replaced the icon sidebar with an editorial top nav (wordmark + text links); theme toggle sits in the nav; secondary links live in the footer
 
 ### Fixed
 

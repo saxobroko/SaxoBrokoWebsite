@@ -70,7 +70,9 @@
     btn.addEventListener("click", function () {
       apply(current() === "dark" ? "light" : "dark", true);
     });
-    document.body.appendChild(btn);
+    var slot = document.querySelector(".site-nav__end");
+    if (slot) slot.appendChild(btn);
+    else document.body.appendChild(btn);
     syncToggle(current());
   }
 
