@@ -52,6 +52,56 @@
     btn.title = dark ? "Light mode" : "Dark mode";
   }
 
+  function prefersReducedMotion() {
+    try {
+      return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function toggleTheme(event) {
+    var next = current() === "dark" ? "light" : "dark";
+    if (prefersReducedMotion() || typeof document.startViewTransition !== "function") {
+      apply(next, true);
+      return;
+    }
+
+    var x = event && typeof event.clientX === "number" ? event.clientX : window.innerWidth / 2;
+    var y = event && typeof event.clientY === "number" ? event.clientY : window.innerHeight / 2;
+    var endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    root.classList.add("theme-vt");
+    var transition = document.startViewTransition(function () {
+      apply(next, true);
+    });
+
+    transition.ready
+      .then(function () {
+        root.animate(
+          {
+            clipPath: [
+              "circle(0px at " + x + "px " + y + "px)",
+              "circle(" + endRadius + "px at " + x + "px " + y + "px)",
+            ],
+          },
+          {
+            duration: 480,
+            easing: "cubic-bezier(.22,1,.36,1)",
+            pseudoElement: "::view-transition-new(root)",
+          }
+        );
+      })
+      .catch(function () {});
+
+    transition.finished.finally(function () {
+      root.classList.remove("theme-vt");
+    });
+  }
+
   function ensureToggle() {
     if (document.getElementById("theme-toggle")) return;
     var btn = document.createElement("button");
@@ -67,9 +117,7 @@
       '<circle cx="12" cy="12" r="4"/>' +
       '<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>' +
       "</svg></span>";
-    btn.addEventListener("click", function () {
-      apply(current() === "dark" ? "light" : "dark", true);
-    });
+    btn.addEventListener("click", toggleTheme);
     var slot = document.querySelector(".site-nav__end");
     if (slot) slot.appendChild(btn);
     else document.body.appendChild(btn);

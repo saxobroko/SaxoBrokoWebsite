@@ -41,6 +41,37 @@ html{scroll-behavior:smooth}
   html{scroll-behavior:auto}
 }
 
+/* ---- View Transitions (MPA nav + themed toggles) ---- */
+@view-transition{
+  navigation:auto;
+}
+::view-transition-old(root),
+::view-transition-new(root){
+  animation-duration:.32s;
+  animation-timing-function:var(--sb-ease);
+}
+.site-nav{
+  view-transition-name:site-nav;
+}
+/* Theme toggle: clip reveal driven from JS; kill default root morph */
+html.theme-vt::view-transition-old(root),
+html.theme-vt::view-transition-new(root){
+  animation:none;
+  mix-blend-mode:normal;
+}
+html.theme-vt::view-transition-old(root){z-index:1}
+html.theme-vt::view-transition-new(root){z-index:999}
+@media (prefers-reduced-motion:reduce){
+  @view-transition{
+    navigation:none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*){
+    animation:none!important;
+  }
+}
+
 body,#main,p,li,a,button,input,.button,.copyright{
   font-family:var(--sb-body);
 }

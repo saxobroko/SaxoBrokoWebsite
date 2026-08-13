@@ -6,6 +6,9 @@ All notable changes to this project are documented in this file.
 
 ### Added
 
+- Cross-document View Transitions between shell pages (nav stays put; reduced-motion turns them off)
+- Theme toggle uses View Transitions with a circular clip reveal from the click point
+- Speculation Rules prerender for same-origin shell links on hover (skips game/tool deep links and `target=_blank`)
 - Eleventy (`@11ty/eleventy`) build that compiles shell pages from `src/` into `_site/`
 - Shared Nunjucks layout and includes (`nav`, `footer`, `head`, `scripts`)
 - `assets/js/site.js` (footer year) and `assets/js/darkmode.js` (split out of `main.js`)
