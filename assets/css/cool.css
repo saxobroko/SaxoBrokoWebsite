@@ -390,13 +390,33 @@ a:hover{color:var(--sb-ice-soft)}
   min-height:100vh;
   height:auto;
   padding:7em 1.5em 6em;
-  background-color:var(--sb-ink);
+  background-color:#0b0d10;
+  /* tiny placeholder while the sharp <picture> arrives */
+  background-image:url(/images/bannerlow.webp)!important;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-attachment:scroll!important;
+}
+#banner[data-hero] .hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  margin:0;
+  pointer-events:none;
+}
+#banner[data-hero] .hero-bg img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
 }
 #banner[data-hero]::before{
   content:"";
   position:absolute;
   inset:0;
-  z-index:0;
+  z-index:1;
   pointer-events:none;
   background:
     linear-gradient(105deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.25) 42%,rgba(0,0,0,.55) 100%),
@@ -407,11 +427,11 @@ a:hover{color:var(--sb-ice-soft)}
   position:absolute;
   inset:auto 0 0 0;
   height:28%;
-  z-index:0;
+  z-index:1;
   pointer-events:none;
   background:linear-gradient(to top,rgba(11,13,16,.9),transparent);
 }
-#banner[data-hero] > .inner{position:relative;z-index:1;max-width:44rem}
+#banner[data-hero] > .inner{position:relative;z-index:2;max-width:44rem}
 #banner[data-hero] .inner{
   transform-style:preserve-3d;
   transition:transform .18s ease-out;
