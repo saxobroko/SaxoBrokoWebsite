@@ -1,0 +1,27 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for page in site.pages %}  <url>
+    <loc>{{ site.url }}{{ page.path }}</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+{% endfor %}{% for g in catalog.games.singleplayer %}  <url>
+    <loc>{{ site.url }}{{ g.path }}</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+{% endfor %}{% for g in catalog.games.multiplayer %}  <url>
+    <loc>{{ site.url }}{{ g.path }}</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+{% endfor %}{% for g in catalog.games.online %}  <url>
+    <loc>{{ site.url }}{{ g.path }}</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+{% endfor %}{% for t in catalog.tools %}{% if not t.external %}  <url>
+    <loc>{{ site.url }}{{ t.path }}</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+{% endif %}{% endfor %}</urlset>

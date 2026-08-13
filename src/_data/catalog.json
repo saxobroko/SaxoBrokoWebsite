@@ -1,0 +1,62 @@
+{
+  "games": {
+    "singleplayer": [
+      { "name": "2048", "path": "/games/2048/index.html", "note": "Slide puzzle" },
+      { "name": "Attac of the Red Dots", "path": "/games/aotrd/index.html", "note": "Dodge red dots" },
+      { "name": "Avoid The Red Dots", "path": "/games/atrd/index.html", "note": "Dodge red dots, earlier take" },
+      { "name": "Coil", "path": "/games/coil/index.html", "note": "Coil / snake-like" },
+      { "name": "Colour Blast", "path": "/games/colourblast.html", "note": "Colour matching" },
+      { "name": "Farblade", "path": "/games/farblade.html", "note": "Action game" },
+      { "name": "Find the ball", "path": "/games/ftb.html", "note": "Find-the-ball" },
+      { "name": "Flappy Bird", "path": "/games/flappy/index.html", "note": "Flappy clone (MelonJS)" },
+      { "name": "Gomoku", "path": "/games/gomoku.html", "note": "Five in a row" },
+      { "name": "Guess-A-Word", "path": "/games/gaw.html", "note": "Word guessing" },
+      { "name": "Math Quiz", "path": "/games/math.html", "note": "Math questions" },
+      { "name": "Math Quiz 2", "path": "/games/math2.html", "note": "More math questions" },
+      { "name": "Maze", "path": "/games/maze.html", "note": "Maze" },
+      { "name": "Minecraft", "path": "/games/minecraft/index.html", "note": "Browser Minecraft-style" },
+      { "name": "Pacman", "path": "/games/pacman/index.html", "note": "Pac-Man" },
+      { "name": "Path Finder", "path": "/games/pathfinder.html", "note": "Path finding" },
+      { "name": "Planet Defender", "path": "/games/planetdefender.html", "note": "Defend the planet" },
+      { "name": "Pong", "path": "/games/pong.html", "note": "Pong" },
+      { "name": "Racing Game", "path": "/games/racinggame.html", "note": "Racing" },
+      { "name": "Reaction Test", "path": "/games/reaction.html", "note": "Reaction time" },
+      { "name": "Rock Paper Scissors", "path": "/games/singlerps.html", "note": "vs computer" },
+      { "name": "Rubiks Cube", "path": "/games/rubiks/index.html", "note": "Rubik's cube" },
+      { "name": "Run", "path": "/games/run/index.html", "note": "Runner" },
+      { "name": "Runner", "path": "/games/runner.html", "note": "Endless runner" },
+      { "name": "Snake", "path": "/games/snake/index.html", "note": "Classic snake" },
+      { "name": "TapTapTap", "path": "/games/taptaptap/index.html", "note": "Tapping game" },
+      { "name": "Target Practice", "path": "/games/targetprac.html", "note": "Shooting targets" },
+      { "name": "Taxi Drift", "path": "/games/taxidrift.html", "note": "Taxi drifting" },
+      { "name": "Tennis", "path": "/games/tennis.html", "note": "Tennis" },
+      { "name": "Tower", "path": "/games/tower/index.html", "note": "Stack / tower" },
+      { "name": "Tower 2", "path": "/games/tower2.html", "note": "Tower sequel" },
+      { "name": "Tron", "path": "/games/tron/index.html", "note": "Light cycles" },
+      { "name": "Typing Game", "path": "/games/typing.html", "note": "Typing practice" },
+      { "name": "Unbeatable Pong", "path": "/games/unbeatablepong.html", "note": "Pong vs ruthless AI" }
+    ],
+    "multiplayer": [
+      { "name": "Tron", "path": "/games/multitron/index.html", "note": "Local multiplayer Tron" },
+      { "name": "Connect 4", "path": "/games/connect4.html", "note": "Connect Four" },
+      { "name": "Pig", "path": "/games/pig/index.html", "note": "Dice game Pig" },
+      { "name": "Ski Race", "path": "/games/ski/index.html", "note": "Ski racing" },
+      { "name": "TicTacToe", "path": "/games/tictactoe.html", "note": "Noughts and crosses" }
+    ],
+    "online": [
+      { "name": "Chess", "path": "/games/chess/index.html", "note": "Online chess" },
+      { "name": "Rock, Paper, Scissors!", "path": "/games/rps/index.html", "note": "Online RPS" }
+    ]
+  },
+  "tools": [
+    { "name": "Percentage Calculator", "path": "/tools/percent/index.html", "note": "Percent math" },
+    { "name": "Saxo_Broko Docs", "path": "/docs.html", "note": "Docs page" },
+    { "name": "Proxy", "path": "https://pro.saxobroko.com", "note": "External proxy", "external": true },
+    { "name": "Logo Finder", "path": "/tools/logofind/index.html", "note": "Find logos" },
+    { "name": "Camera", "path": "/tools/camera/index.html", "note": "Camera tool" },
+    { "name": "Ginger Chrome", "path": "/tools/ginger.html", "note": "Chrome experiment" },
+    { "name": "Colours", "path": "/tools/color.html", "note": "Colour utility" },
+    { "name": "Piglatin Translator", "path": "/tools/piglatin/index.html", "note": "Pig Latin" },
+    { "name": "Maze Generator", "path": "/tools/mazegen.html", "note": "Generate mazes" }
+  ]
+}

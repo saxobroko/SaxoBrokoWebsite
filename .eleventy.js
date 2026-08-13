@@ -1,6 +1,9 @@
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addFilter("jsonld", (value) => JSON.stringify(value));
+
   // Keep sentimental / legacy assets; deploy everything that isn't a shell template.
+  // robots.txt + sitemap.xml are generated from src/ templates.
   const passthrough = [
     "games",
     "tools",
@@ -17,8 +20,6 @@ module.exports = function (eleventyConfig) {
     "offline.html",
     "404.html",
     "ads.txt",
-    "robots.txt",
-    "sitemap.xml",
     "browserconfig.xml",
     "CNAME",
     "favicon.ico",

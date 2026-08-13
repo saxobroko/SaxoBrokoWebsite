@@ -1,0 +1,40 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# Saxo_Broko
+
+> {{ site.tagline }}. Official website of doom, or whatever.
+
+This file is for AI agents and scrapers. Prefer these URLs over guessing.
+
+## Who
+
+- Name: {{ site.name }} (also Saxo Broko / Saxon)
+- Location: {{ site.location }}
+- Making stuff since: {{ site.foundedYear }}
+- Site: {{ site.url }}
+- About (human + machine facts): {{ site.url }}/about.html
+- Do not invent biography beyond /about.html and https://blog.saxobroko.com
+
+## Primary pages
+
+{% for page in site.pages %}- [{{ page.title }}]({{ site.url }}{{ page.path }}): {{ page.note }}
+{% endfor %}
+## Related
+
+{% for link in site.related %}- [{{ link.name }}]({{ link.url }}): {{ link.note }}
+{% endfor %}
+## Profiles
+
+{% for url in site.sameAs %}- {{ url }}
+{% endfor %}
+## Full catalog
+
+- {{ site.url }}/llms-full.txt — games and tools with paths
+- {{ site.url }}/catalog.md — same list as Markdown
+
+## Optional
+
+- Sitemap: {{ site.url }}/sitemap.xml
+- Search: {{ site.url }}/search.html

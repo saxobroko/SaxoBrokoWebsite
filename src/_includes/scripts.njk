@@ -1,17 +1,12 @@
 {# scripts: lean | dark | shell | gallery #}
 {% if jsonLd %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://saxobroko.com/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://saxobroko.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+<script type="application/ld+json">{{ schema.homeGraph | jsonld | safe }}</script>
+{% elif schemaPerson %}
+<script type="application/ld+json">{{ schema.personGraph | jsonld | safe }}</script>
+{% elif schemaGames %}
+<script type="application/ld+json">{{ schema.gamesList | jsonld | safe }}</script>
+{% elif schemaTools %}
+<script type="application/ld+json">{{ schema.toolsList | jsonld | safe }}</script>
 {% endif %}
 {% if scripts == "gallery" %}
 <script defer src="/assets/js/jquery.min.js"></script>
@@ -28,9 +23,9 @@
 <script defer src="/assets/js/main.js"></script>
 {% endif %}
 {% if scripts == "dark" or scripts == "gallery" or scripts == "shell" or scripts == "lean" %}
-<script defer src="/assets/js/darkmode.js?v=2.7.0"></script>
+<script defer src="/assets/js/darkmode.js?v=2.8.0"></script>
 {% endif %}
-<script defer src="/assets/js/site.js?v=2.7.0"></script>
+<script defer src="/assets/js/site.js?v=2.8.0"></script>
 {% if pwa %}
 <script type="module">
   import '/assets/js/pwaupdate.js';

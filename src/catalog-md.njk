@@ -1,0 +1,28 @@
+---
+permalink: /catalog.md
+eleventyExcludeFromCollections: true
+---
+# Saxo_Broko catalog
+
+Plaintext list of games and tools on [saxobroko.com](https://saxobroko.com).
+
+- About: [about.html](https://saxobroko.com/about.html)
+- AI map: [llms.txt](https://saxobroko.com/llms.txt)
+- Blog: [blog.saxobroko.com](https://blog.saxobroko.com)
+
+## Games — singleplayer
+
+{% for g in catalog.games.singleplayer %}- [{{ g.name }}]({{ site.url }}{{ g.path }}) — {{ g.note }}
+{% endfor %}
+## Games — multiplayer
+
+{% for g in catalog.games.multiplayer %}- [{{ g.name }}]({{ site.url }}{{ g.path }}) — {{ g.note }}
+{% endfor %}
+## Games — online multiplayer
+
+{% for g in catalog.games.online %}- [{{ g.name }}]({{ site.url }}{{ g.path }}) — {{ g.note }}
+{% endfor %}
+## Tools
+
+{% for t in catalog.tools %}- [{{ t.name }}]({% if t.external %}{{ t.path }}{% else %}{{ site.url }}{{ t.path }}{% endif %}) — {{ t.note }}
+{% endfor %}

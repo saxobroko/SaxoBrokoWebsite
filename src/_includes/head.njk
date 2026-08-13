@@ -1,7 +1,31 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{ title }} - Saxo_Broko</title>
-<meta name="description" content="{% if description %}{{ description }}{% else %}Saxo_Broko's official website of doom, or whatever.{% endif %}">
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+{%- set canonicalPath = permalink or page.url or "/" -%}
+{%- if canonicalPath == "/" or canonicalPath == "/index.html" -%}
+{%- set canonicalUrl = site.url + "/" -%}
+{%- else -%}
+{%- set canonicalUrl = site.url + canonicalPath -%}
+{%- endif -%}
+<link rel="canonical" href="{{ canonicalUrl }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="en_AU">
+<meta property="og:type" content="{% if active == 'about' %}profile{% else %}website{% endif %}">
+<meta property="og:title" content="{{ title }} - Saxo_Broko">
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:url" content="{{ canonicalUrl }}">
+<meta property="og:image" content="{% if ogImage %}{{ ogImage }}{% else %}{{ site.ogImage }}{% endif %}">
+<meta property="og:image:alt" content="Saxo_Broko">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Saxo_BrokoYT">
+<meta name="twitter:creator" content="@Saxo_BrokoYT">
+<meta name="twitter:title" content="{{ title }} - Saxo_Broko">
+<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{% if ogImage %}{{ ogImage }}{% else %}{{ site.ogImage }}{% endif %}">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<link rel="alternate" type="text/markdown" href="/catalog.md" title="Catalog">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 <script>
   (function () {
     try {
@@ -18,8 +42,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/main.css?v=2.7.2" />
-<link rel="stylesheet" href="/assets/css/cool.css?v=2.7.2" />
+<link rel="stylesheet" href="/assets/css/main.css?v=2.8.0" />
+<link rel="stylesheet" href="/assets/css/cool.css?v=2.8.0" />
 {% if scripts == "gallery" %}
 <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
 {% endif %}

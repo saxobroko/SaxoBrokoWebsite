@@ -9,6 +9,9 @@ All notable changes to this project are documented in this file.
 - Cross-document View Transitions between shell pages (nav stays put; reduced-motion turns them off)
 - Theme toggle uses View Transitions with a circular clip reveal from the click point
 - Speculation Rules prerender for same-origin shell links on hover (skips game/tool deep links and `target=_blank`)
+- AI-facing site map: `/llms.txt`, `/llms-full.txt`, `/catalog.md`, real `/sitemap.xml`, and `/robots.txt` pointing at them
+- `/about` with stable facts (name, Sunbury, since 2015, elsewhere links) plus Person / ItemList JSON-LD
+- Open Graph, Twitter, and canonical tags on every shell page
 - Eleventy (`@11ty/eleventy`) build that compiles shell pages from `src/` into `_site/`
 - Shared Nunjucks layout and includes (`nav`, `footer`, `head`, `scripts`)
 - `assets/js/site.js` (footer year) and `assets/js/darkmode.js` (split out of `main.js`)
@@ -24,6 +27,7 @@ All notable changes to this project are documented in this file.
 
 ### Changed
 
+- Games and tools lists are driven from shared catalog data (same source as llms/catalog/schema)
 - Shell pages (home, games, tools, portfolio, eco, oscar, search, privacy, terms, sponsors) are templates with explicit `.html` permalinks so they do not collide with game/tool folders
 - Lean script bundles on home (no unused jQuery/Magnific)
 - Same-origin banner and eco backgrounds instead of third-party image CDN

@@ -1,0 +1,64 @@
+---
+permalink: "/about.html"
+layout: "base.njk"
+title: "About"
+active: "about"
+scripts: "dark"
+description: "Who Saxo_Broko is — Sunbury, Australia, making stuff since 2015. World renowned Unicorn Rider, or whatever."
+schemaPerson: true
+---
+<section class="about-page">
+  <div class="inner about-page__inner">
+    <header>
+      <h1>About</h1>
+      <p class="about-page__lede">The short version, for humans and machines.</p>
+    </header>
+
+    <dl class="about-page__facts">
+      <div>
+        <dt>Name</dt>
+        <dd>Saxo_Broko <span class="about-page__mute">(also Saxo Broko / Saxon)</span></dd>
+      </div>
+      <div>
+        <dt>Thing I’m known for saying</dt>
+        <dd>{{ site.tagline }}</dd>
+      </div>
+      <div>
+        <dt>Where</dt>
+        <dd>{{ site.location }}</dd>
+      </div>
+      <div>
+        <dt>Since</dt>
+        <dd>{{ site.foundedYear }} — games, tools, photos, music, Oscar, eco, n whatnot</dd>
+      </div>
+      <div>
+        <dt>This site</dt>
+        <dd>{{ site.description }}</dd>
+      </div>
+    </dl>
+
+    <h2>Elsewhere</h2>
+    <ul class="about-page__links">
+      {% for link in site.sameAs %}
+      <li><a href="{{ link }}" rel="me noopener noreferrer">{{ link | replace("https://", "") | replace("www.", "") }}</a></li>
+      {% endfor %}
+      {% for link in site.related %}
+      <li><a href="{{ link.url }}" rel="noopener noreferrer">{{ link.name }}</a> — {{ link.note }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>On this site</h2>
+    <ul class="about-page__links">
+      <li><a href="/games.html">Games</a> — browser games</li>
+      <li><a href="/tools.html">Tools</a> — small utilities</li>
+      <li><a href="/portfolio.html">Portfolio</a> — photos / gallery</li>
+      <li><a href="/oscar.html">Oscar</a> — 2020–2022</li>
+      <li><a href="/eco.html">Eco</a> — sustainability</li>
+      <li><a href="https://blog.saxobroko.com" rel="noopener noreferrer">Blog</a> — longer writing lives here</li>
+      <li><a href="/catalog.md">catalog.md</a> — plaintext list of games and tools</li>
+      <li><a href="/llms.txt">llms.txt</a> — for AI agents</li>
+    </ul>
+
+    <p class="about-page__foot">Don’t invent biography past what’s here. If it’s not on this page or the blog, I probably didn’t say it.</p>
+  </div>
+</section>

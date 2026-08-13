@@ -1,0 +1,41 @@
+{
+  "name": "Saxo_Broko",
+  "alternateName": ["Saxo Broko", "Saxon"],
+  "url": "https://saxobroko.com",
+  "description": "Official website of doom, or whatever. Games, tools, portfolio, photos, music, and Oscar. Making stuff since 2015.",
+  "tagline": "World renowned Unicorn Rider",
+  "foundedYear": 2015,
+  "location": "Sunbury, Australia",
+  "email": null,
+  "ogImage": "https://saxobroko.com/images/banner-1600.webp",
+  "sameAs": [
+    "https://blog.saxobroko.com",
+    "https://github.com/saxobroko",
+    "https://twitter.com/Saxo_BrokoYT",
+    "https://www.youtube.com/@Saxo_BrokoYT"
+  ],
+  "related": [
+    { "name": "Blog", "url": "https://blog.saxobroko.com", "note": "Writing and longer posts" },
+    { "name": "Share", "url": "https://share.saxobroko.com", "note": "File share" },
+    { "name": "Status", "url": "https://status.saxobroko.com", "note": "Uptime" },
+    { "name": "Feedback", "url": "https://saxobroko.kampsite.co/", "note": "Feature requests" },
+    { "name": "Proxy", "url": "https://pro.saxobroko.com", "note": "Proxy tool — dunno what pro does" }
+  ],
+  "pages": [
+    { "path": "/", "title": "Home", "note": "Hero, search, taglines" },
+    { "path": "/about.html", "title": "About", "note": "Who this is — facts for humans and machines" },
+    { "path": "/games.html", "title": "Games", "note": "Browser games (singleplayer, multiplayer, online)" },
+    { "path": "/tools.html", "title": "Tools", "note": "Small web utilities" },
+    { "path": "/portfolio.html", "title": "Portfolio", "note": "Photo / image gallery" },
+    { "path": "/eco.html", "title": "Eco", "note": "Sustainability notes" },
+    { "path": "/oscar.html", "title": "Oscar", "note": "Memorial gallery for Oscar (2020–2022)" },
+    { "path": "/search.html", "title": "Search", "note": "Site search" },
+    { "path": "/sponsors.html", "title": "Sponsors", "note": "Sponsors" },
+    { "path": "/privacy.html", "title": "Privacy", "note": "Privacy policy" },
+    { "path": "/terms.html", "title": "Terms", "note": "Terms" },
+    { "path": "/links.html", "title": "Links", "note": "Link-in-bio style page" },
+    { "path": "/catalog.md", "title": "Catalog", "note": "Plaintext list of games and tools" },
+    { "path": "/llms.txt", "title": "llms.txt", "note": "Short AI/agent site map" },
+    { "path": "/llms-full.txt", "title": "llms-full.txt", "note": "Longer AI/agent catalog" }
+  ]
+}
