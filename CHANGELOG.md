@@ -49,6 +49,7 @@ All notable changes to this project are documented in this file.
 - Home hero no longer overshoots into browser chrome / Windows taskbar (`100dvh`/`100svh` + safe-area padding instead of bare `100vh`)
 - Light-mode hero vignette inverted (bright edges, soft centre shade) so it doesn’t fight the light theme
 - Restored Impact site verification meta in the shared head include
+- Clarified Oscar was a pet fish (2020–2022) on about, Oscar page, and AI catalogs
 - Statically CDN image URLs returning 403 on portfolio, oscar, and eco CSS backgrounds
 - Root archive `portfolio.html` / `oscar.html` lightbox and thumb links rewritten off discontinued Statically endpoints (Eleventy `src/` templates already used `/images/...`)
 - Portfolio Magnific Popup restored so gallery images open in a lightbox again (`delegate: 'a'` on `.content`, matching pre-migration behavior)
