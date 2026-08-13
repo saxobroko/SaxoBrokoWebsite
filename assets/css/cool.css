@@ -411,6 +411,7 @@ a:hover{color:var(--sb-ice-soft)}
   height:100%;
   object-fit:cover;
   object-position:center;
+  filter:contrast(1.06) brightness(1.04);
 }
 #banner[data-hero]::before{
   content:"";
@@ -419,17 +420,17 @@ a:hover{color:var(--sb-ice-soft)}
   z-index:1;
   pointer-events:none;
   background:
-    linear-gradient(105deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.25) 42%,rgba(0,0,0,.55) 100%),
-    radial-gradient(ellipse at 50% 40%,transparent 20%,rgba(0,0,0,.55) 100%);
+    linear-gradient(105deg,rgba(0,0,0,.48) 0%,rgba(0,0,0,.14) 45%,rgba(0,0,0,.38) 100%),
+    radial-gradient(ellipse at 50% 42%,transparent 28%,rgba(0,0,0,.4) 100%);
 }
 #banner[data-hero]::after{
   content:"";
   position:absolute;
   inset:auto 0 0 0;
-  height:28%;
+  height:22%;
   z-index:1;
   pointer-events:none;
-  background:linear-gradient(to top,rgba(11,13,16,.9),transparent);
+  background:linear-gradient(to top,rgba(11,13,16,.72),transparent);
 }
 #banner[data-hero] > .inner{position:relative;z-index:2;max-width:44rem}
 #banner[data-hero] .inner{

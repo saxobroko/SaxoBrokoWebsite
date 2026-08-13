@@ -33,7 +33,8 @@ All notable changes to this project are documented in this file.
 - Nav search expand now uses the Web Animations API (~420ms) so it still plays when Windows “reduce motion” disables CSS transitions
 - Home tagline now slides to the next line via WAAPI (was skipped / snapped under Windows reduce-motion)
 - Replaced cringy AI taglines with Saxo-voice lines (kept Unicorn Rider; added doom/or whatever, games-tools-n-whatnot, since 2015); added `.cursor/rules/site-voice.mdc`
-- Sharper home hero from the 1600px source via responsive AVIF/WebP (`~10–28KB` AVIF) + tiny LQIP placeholder and preload `imagesrcset` so it still feels instant
+- Sharper home hero from the 1600px source via responsive AVIF/WebP + tiny LQIP placeholder and preload `imagesrcset` so it still feels instant
+- Hero quality pass: higher-bitrate encodes, 2400w retina size, lighter vignette so mist/trees aren’t crushed
 
 ### Fixed
 
