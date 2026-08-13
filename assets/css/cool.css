@@ -426,20 +426,31 @@ a:hover{color:var(--sb-ice-soft)}
   color:#fff;
   text-shadow:0 8px 40px rgba(0,0,0,.55);
 }
-#banner[data-hero] [data-tagline]{
+#banner[data-hero] .hero-tagline{
   display:inline-block;
   margin:0 0 1.4em;
   padding:0 0 .4em;
+  border-bottom:1px solid rgba(143,211,255,.55);
+  max-width:100%;
+}
+#banner[data-hero] .hero-tagline__stage{
+  display:block;
+  overflow:hidden;
+  min-height:1.55em;
+  line-height:1.45;
+}
+#banner[data-hero] [data-tagline]{
+  display:block;
+  margin:0;
+  padding:0;
   font-size:clamp(1.05rem,2.4vw,1.35rem);
   font-weight:500;
   letter-spacing:.04em;
   text-transform:none;
   color:rgba(255,255,255,.92);
-  border-bottom:1px solid rgba(143,211,255,.55);
-  min-height:1.5em;
-  transition:opacity .35s ease;
+  border:0;
+  will-change:transform,opacity;
 }
-#banner[data-hero] [data-tagline].is-fading{opacity:0}
 
 html.js-ux #banner[data-hero]:not(.is-ready):not(.is-reduced) [data-hero-stagger]{
   opacity:0;

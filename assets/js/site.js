@@ -49,10 +49,10 @@
     document.documentElement.classList.add("is-ready");
   });
 
-  /* Path D — rotating home tagline */
+  /* Path D — rotating home tagline (slide via WAAPI; works even with OS reduce-motion) */
   (function initTagline() {
     var line = document.querySelector("#banner [data-tagline]");
-    if (!line || prefersReduced.matches) return;
+    if (!line) return;
 
     var lines = [
       "World renowned Unicorn Rider",
@@ -61,15 +61,58 @@
       "Still shipping static HTML like it matters",
     ];
     var i = 0;
+    var busy = false;
+    var OUT_MS = 360;
+    var IN_MS = 420;
+    var HOLD_MS = 2600;
+
+    function slideTo(next) {
+      if (busy) return;
+      busy = true;
+
+      function finishIn() {
+        busy = false;
+      }
+
+      if (typeof line.animate !== "function") {
+        line.textContent = next;
+        finishIn();
+        return;
+      }
+
+      var out = line.animate(
+        [
+          { opacity: 1, transform: "translateY(0)" },
+          { opacity: 0, transform: "translateY(-0.85em)" },
+        ],
+        {
+          duration: OUT_MS,
+          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+          fill: "forwards",
+        }
+      );
+
+      out.onfinish = function () {
+        line.textContent = next;
+        var inn = line.animate(
+          [
+            { opacity: 0, transform: "translateY(0.85em)" },
+            { opacity: 1, transform: "translateY(0)" },
+          ],
+          {
+            duration: IN_MS,
+            easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+            fill: "forwards",
+          }
+        );
+        inn.onfinish = finishIn;
+      };
+    }
 
     window.setInterval(function () {
       i = (i + 1) % lines.length;
-      line.classList.add("is-fading");
-      window.setTimeout(function () {
-        line.textContent = lines[i];
-        line.classList.remove("is-fading");
-      }, 320);
-    }, 2200);
+      slideTo(lines[i]);
+    }, HOLD_MS);
   })();
 
   /* Expandable nav search — WAAPI so it still animates when OS “reduce motion” kills CSS transitions */

@@ -31,6 +31,7 @@ All notable changes to this project are documented in this file.
 - Nav search icon expands into an animated inline field (Escape / empty outside-click closes; submits to `/search`)
 - Slowed nav search open animation (~1.45s) and switched off non-interpolating `width: min()` so the expand is actually visible
 - Nav search expand now uses the Web Animations API (~420ms) so it still plays when Windows “reduce motion” disables CSS transitions
+- Home tagline now slides to the next line via WAAPI (was skipped / snapped under Windows reduce-motion)
 
 ### Fixed
 
