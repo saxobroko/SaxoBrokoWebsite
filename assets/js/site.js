@@ -71,4 +71,75 @@
       }, 320);
     }, 2200);
   })();
+
+  /* Expandable nav search */
+  (function initNavSearch() {
+    var form = document.querySelector("[data-nav-search]");
+    if (!form) return;
+    var input = form.querySelector(".site-nav__search-input");
+    var toggle = form.querySelector("[data-nav-search-toggle]");
+    if (!input || !toggle) return;
+
+    function open() {
+      form.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close search");
+      input.removeAttribute("tabindex");
+      window.requestAnimationFrame(function () {
+        input.focus();
+      });
+    }
+
+    function close() {
+      form.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open search");
+      input.setAttribute("tabindex", "-1");
+      input.blur();
+    }
+
+    toggle.addEventListener("click", function () {
+      if (form.classList.contains("is-open")) close();
+      else open();
+    });
+
+    form.addEventListener("submit", function (e) {
+      if (!form.classList.contains("is-open")) {
+        e.preventDefault();
+        open();
+        return;
+      }
+      if (!String(input.value || "").trim()) {
+        e.preventDefault();
+        input.focus();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && form.classList.contains("is-open")) {
+        close();
+        toggle.focus();
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!form.classList.contains("is-open")) return;
+      if (form.contains(e.target)) return;
+      if (!String(input.value || "").trim()) close();
+    });
+
+    if (prefersReduced.matches) {
+      form.style.transition = "none";
+      input.style.transition = "none";
+    }
+
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var q = params.get("q");
+      if (q) {
+        input.value = q;
+        open();
+      }
+    } catch (err) {}
+  })();
 })();
